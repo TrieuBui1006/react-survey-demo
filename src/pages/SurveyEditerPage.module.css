@@ -1,0 +1,51 @@
+.SurveyEditerPage {
+    width: 80%;
+    min-height: 600px;
+    box-shadow: 0 3px 4px #254E70;
+    margin: 0 auto;
+    border-radius: 3px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.SurveyEditerPage .SurveyPreview {
+    width: 65%;
+    min-height: 500px;
+    box-shadow: 0 2px 3px #9F9A9A;
+    margin: 3px 3px;
+    padding: 20px 30px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.SurveyEditerPage .SideBar {
+    width: 35%;
+    min-height: 500px;
+    box-shadow: 0 2px 3px #9F9A9A;
+    margin: 3px 3px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.SurveyEditerPage .SurveyTitle {
+    margin-bottom: 30px;
+}
+
+.SurveyEditerPage .Question {
+    margin: 20px auto;
+    padding: 10px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px #ccc;
+    box-sizing: border-box;
+}
+
+.SurveyEditerPage .Question input, textarea {
+    height: 2em;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px #ccc;
+}
+
+.SurveyEditerPage .Question textarea {
+    height: 4em;
+} 
