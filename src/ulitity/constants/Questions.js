@@ -5,7 +5,7 @@ export const QuestionDescriptions = [{
   type: 'SINGLE_LINE_TEXT'
 }, {
   text: 'Multiple Line Text',
-  type: 'MUTLI_LINE_TEXT'
+  type: 'MULTI_LINE_TEXT'
 }, {
   text: 'Multiple Choice',
   type: 'MULTI_CHOICE'
@@ -19,7 +19,7 @@ export const QuestionDescriptions = [{
 
 export const QuestionTypes = {
   SINGLE_LINE_TEXT: 'SINGLE_LINE_TEXT',
-  MUTLI_LINE_TEXT: 'MUTLI_LINE_TEXT',
+  MULTI_LINE_TEXT: 'MULTI_LINE_TEXT',
   MULTI_CHOICE: 'MULTI_CHOICE',
   CHECKBOXES: 'CHECKBOXES',
   DROPDOWN: 'DROPDOWN'
@@ -70,9 +70,9 @@ export const InitQuestions = {
     title: 'Untitled',
     placeholder: ''
   }),
-  [QuestionTypes.MUTLI_LINE_TEXT]: () => ({
+  [QuestionTypes.MULTI_LINE_TEXT]: () => ({
     "_id": newId(),
-    type: QuestionTypes.MUTLI_LINE_TEXT,
+    type: QuestionTypes.MULTI_LINE_TEXT,
     title: 'Untitled',
     placeholder: ''
   }),

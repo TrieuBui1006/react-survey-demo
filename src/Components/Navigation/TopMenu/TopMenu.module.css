@@ -1,9 +1,9 @@
 .TopMenu {
     height: 40px;
     width: 100%;
-    position: fixed;
+    /* position: fixed;
     top: 55px;
-    left: 0;
+    left: 0; */
     background-color: white;
     display: flex;
     align-items: center;

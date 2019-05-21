@@ -2,7 +2,9 @@ import * as actionTypes from '../actions/actionsTypes';
 
 const initialState = {
     survey: {
-        id: '', 
+        id: '',
+        title: 'Survey title',
+        subTitle: 'Survey subTitle', 
         questions: {}, 
         question_order: []
     },
