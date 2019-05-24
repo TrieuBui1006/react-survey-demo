@@ -1,11 +1,13 @@
 import React from 'react';
 
+import classes from './QuestionListPanel.module.css';
+
 const questionListPanel = (props) => {
     let { questions, dispatch } = props;
     return (
         <div>
-            <h4>Questions</h4>
-            <div>
+            <b>Questions</b>
+            <div className={classes.QuestionListPanel}>
                 {questions.map(question => {
                     return <button
                                 key={question.text}

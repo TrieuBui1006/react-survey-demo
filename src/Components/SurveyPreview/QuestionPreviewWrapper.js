@@ -26,10 +26,10 @@ const questionMap = {
 };
 
 const QuestionPreviewWrapper = (props) => {
-    const {question} = props;
+    const {question, onActive} = props;
     let quest = questionMap[question.type](question);
     return(
-        <div>
+        <div onClick={() => { onActive(question._id) }}>
             {quest}
         </div>
     );   

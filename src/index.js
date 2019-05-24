@@ -1,19 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import surveyEditerReducer from './Store/reducers/surveyEditer';
+import tabReducer from './Store/reducers/Tab';
 
 const rootReducer = combineReducers({
-    surveyEditer: surveyEditerReducer
+    surveyEditer: surveyEditerReducer,
+    tab: tabReducer
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const app = (
     <Provider store={store}>

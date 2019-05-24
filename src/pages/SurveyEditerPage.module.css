@@ -1,78 +1,26 @@
 .SurveyEditerPage {
-    width: 85%;
-    min-height: 600px;
-    box-shadow: 0 3px 4px #254E70;
+    width: 100%;
     margin: 0 auto;
     border-radius: 3px;
-    display: flex;
     box-sizing: border-box;
 }
-
 .SurveyEditerPage .SurveyPreview {
-    width: 70%;
-    min-height: 1000px;
-    box-shadow: 0 2px 3px #9F9A9A;
-    margin: 3px 3px;
-    padding: 20px 30px;
-    border-radius: 3px;
+    width: 100%;
+    min-height: 40vh;
+    max-height: 60vh;
+    overflow-y: auto;
+    margin-bottom: 5px;
+    padding: 0 15px;
     box-sizing: border-box;
 }
 
 .SurveyEditerPage .SideBar {
-    width: 30%;
-    min-height: 500px;
-    box-shadow: 0 2px 3px #9F9A9A;
-    margin: 3px 3px;
-    border-radius: 3px;
-    box-sizing: border-box;
-}
-
-.SurveyEditerPage .SurveyTitle {
-    margin-bottom: 30px;
-}
-
-/* .SurveyEditerPage .Question {
-    margin: 20px auto;
-    padding: 10px 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 3px #ccc;
-    box-sizing: border-box;
-}
-
-.SurveyEditerPage .Question input, textarea {
-    height: 2em;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: 0 1px 2px #ccc;
-}
-
-.SurveyEditerPage .Question textarea {
-    height: 4em;
-}  */
-
-.SurveyEditerPage .SwitchTab {
-    display: flex;
-    justify-items: center;
-    justify-content: space-between;
-    padding: 10px 10px;
-    box-sizing: border-box;
-}
-
-.SurveyEditerPage .SwitchTab button {
-    padding: 10px;
-}
-
-.SurveyEditerPage .QuestionTypes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-items: center;
-    padding: 0 5px;
-    box-sizing: border-box;
-}
-
-.SurveyEditerPage .QuestionTypes button {
-    margin: 5px;
-    padding: 5px;
+    width: 100%;
+    min-height: 20vh;
+    /* position: fixed; */
+    bottom: 0;
+    right: 0;
+    background-color: white;
     box-sizing: border-box;
 }
 
@@ -81,22 +29,62 @@
 }
 
 .SurveyEditerPage .Footer button {
-    padding: 10px;
+    padding: 5px;
 }
 
-button {
-    border-radius: 5px;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-button:hover,
-button:focus {
-    color: white;
-    background-color: #254E70;
-}
-
-button:active {
-    color: white;
-    background-color: #40A4C8;
+@media(min-width: 799px) {
+    .SurveyEditerPage {
+        width: 85%;
+        min-height: 600px;
+        box-shadow: 0 3px 4px #254E70;
+        margin: 0 auto;
+        border-radius: 3px;
+        display: flex;
+        box-sizing: border-box;
+    }
+    
+    .SurveyEditerPage .SurveyPreview {
+        width: 70%;
+        min-height: 1000px;
+        box-shadow: 0 2px 3px #9F9A9A;
+        margin: 3px 3px;
+        padding: 20px 30px;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    
+    .SurveyEditerPage .SideBar {
+        width: 30%;
+        min-height: 500px;
+        position: initial;
+        box-shadow: 0 2px 3px #9F9A9A;
+        margin: 3px 3px;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    
+    .SurveyEditerPage .Footer {
+        text-align: center;
+    }
+    
+    .SurveyEditerPage .Footer button {
+        padding: 10px;
+    }
+    
+    button {
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button:hover,
+    button:focus {
+        color: white;
+        background-color: #254E70;
+    }
+    
+    button:active {
+        color: white;
+        background-color: #40A4C8;
+    }
+    
 }

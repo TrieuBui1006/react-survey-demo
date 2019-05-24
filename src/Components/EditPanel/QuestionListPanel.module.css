@@ -1,0 +1,11 @@
+.QuestionListPanel {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.QuestionListPanel button {
+    width: 100%;
+    margin: 3px auto;
+    padding: 12px;
+    box-sizing: border-box;
+}

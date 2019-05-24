@@ -1,10 +1,11 @@
 import React from 'react';
 
 const surveyHeader = (props) => {
+    let { title, subTitle, onActive } = props;
     return (
-        <header>
-            <h1>{props.title}</h1>
-            <p>{props.subTitle}</p>
+        <header onClick={onActive}>
+            <h1>{title}</h1>
+            <p>{subTitle}</p>
         </header>
     );
 };

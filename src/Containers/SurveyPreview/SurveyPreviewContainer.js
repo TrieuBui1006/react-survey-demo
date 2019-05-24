@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import SurveyPreview from '../../Components/SurveyPreview/SurveyPreview';
 import QuestionList from '../../Components/SurveyPreview/QuestionList';
+import {activeQuestion} from '../../Store/actions/surveyEditer';
 
 class SurveyPreviewContainer extends Component {
     componentDidMount() {
@@ -29,4 +31,12 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(SurveyPreviewContainer);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onHeaderActive: () => {
+            dispatch(activeQuestion('header'));
+          },
+        onActive: bindActionCreators(activeQuestion, dispatch)
+    }
+}    
+export default connect(mapStateToProps, mapDispatchToProps)(SurveyPreviewContainer);

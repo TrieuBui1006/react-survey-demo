@@ -26,6 +26,36 @@ const reducer = (state = initialState, action) => {
                     question_order: [...state.survey.question_order, action.questionId]
                 }
             };
+        case actionTypes.ACTIVE_QUESTION:
+            return {
+                ...state,
+                survey: {
+                    ...state.survey,
+                    current_question_id: action.questionId
+                }
+            };
+        case actionTypes.UPDATE_QUESTION:
+            return {
+                ...state,
+                survey: {
+                    ...state.survey,
+                    questions: {
+                        ...state.survey.questions,
+                        [action.questionId]: {
+                            ...state.survey.questions[action.questionId],
+                            ...action.payload
+                        }
+                    }
+                }
+            };
+        case actionTypes.UPDATE_SURVEY_HEADER:
+            return {
+                ...state,
+                survey: {
+                    ...state.survey,
+                    ...action.payload
+                }
+            };
         default:
             return state;
     };

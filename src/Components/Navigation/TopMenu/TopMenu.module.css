@@ -1,9 +1,6 @@
 .TopMenu {
     height: 40px;
     width: 100%;
-    /* position: fixed;
-    top: 55px;
-    left: 0; */
     background-color: white;
     display: flex;
     align-items: center;
@@ -17,10 +14,7 @@
 }
 
 @media(max-width: 499px) {
-    .DesktopOnly {
-        display: none;
-    }
     .TopMenu{
-        padding: 0px 20px;
+        display: none;
     }
 }

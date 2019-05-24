@@ -4,13 +4,14 @@ import SurveyHeader from './SurveyHeader';
 
 class SurveyPreview extends Component {
     render () {
-        let {survey} = this.props
+        let {survey, onHeaderActive } = this.props
         return (
             <div>
                 <form>
                     <SurveyHeader
                         title={survey.title}
-                        subTitle={survey.subTitle} />
+                        subTitle={survey.subTitle} 
+                        onActive={onHeaderActive}/>
                     {this.props.children}
                 </form>
             </div>
