@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
-import {createStore, combineReducers, applyMiddleware} from 'redux';
+import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 
@@ -10,13 +10,19 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import surveyEditerReducer from './Store/reducers/surveyEditer';
 import tabReducer from './Store/reducers/Tab';
+import authReducer from './Store/reducers/authentication';
+import surveysReducer from './Store/reducers/surveys';
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     surveyEditer: surveyEditerReducer,
-    tab: tabReducer
+    tab: tabReducer,
+    auth: authReducer,
+    surveys: surveysReducer
 });
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 const app = (
     <Provider store={store}>

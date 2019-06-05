@@ -6,7 +6,7 @@ const dropdown = (props) => {
         <div>
           <h3 className="question-title">{title}</h3>
           <div className="form-group">
-            <select className="form-control" name={_id}>
+            <select className="form-control" name={_id} disabled>
               {options.map((option, index) => {
                 return (
                     <option value={option._id} key={index}>{option.content}</option>

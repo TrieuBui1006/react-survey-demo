@@ -61,6 +61,7 @@
         min-height: 40px;
         width: 33.32%;
         align-content: center;
+        border: 1px solid #ccc;
     }
     .EditTab .Content {
         width: 100%;

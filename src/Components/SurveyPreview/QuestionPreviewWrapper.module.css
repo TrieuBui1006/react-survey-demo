@@ -1,0 +1,23 @@
+.QuestionPreviewWrapper {
+    cursor: pointer;
+}
+
+.GroupButton {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.GroupButton button {
+    padding: 5px 8px;
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+@media(min-width: 799px) {
+    .GroupButton button {
+        margin: 0;
+    }
+}

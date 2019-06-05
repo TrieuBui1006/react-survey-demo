@@ -1,0 +1,22 @@
+.HomePageWelcome {
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.HomePageWelcome h1 {
+    color: #254E70;
+}
+
+.HomePageWelcome a {
+    text-decoration: none;
+}
+.HomePageWelcome button {
+    padding: 10px 30px;
+}
+
+.HomePage {
+    text-align: center;
+}

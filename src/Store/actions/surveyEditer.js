@@ -1,6 +1,9 @@
 import * as actionTypes from './actionsTypes';
 import {InitQuestions} from '../../ulitity/constants/Questions';
 import tabTypes from '../../ulitity/constants/TabTypes';
+import newId from '../../ulitity/idGenerator';
+
+
 
 export const addQuestion = (questionType) => {
     let newQuestion = InitQuestions[questionType]();
@@ -41,3 +44,16 @@ export const switchTab = (tab) => ({
     type: actionTypes.SWITCH_TAB,
     tab
   });
+
+export const cloneQuestion = (question) => {
+  return {
+    type: actionTypes.CLONE_QUESTION,
+    payload: {
+      ...question,
+      _id: newId()
+    }
+  }
+};
+
+
+

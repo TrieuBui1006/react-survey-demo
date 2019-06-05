@@ -17,7 +17,6 @@
 .SurveyEditerPage .SideBar {
     width: 100%;
     min-height: 20vh;
-    /* position: fixed; */
     bottom: 0;
     right: 0;
     background-color: white;
@@ -32,9 +31,9 @@
     padding: 5px;
 }
 
+
 @media(min-width: 799px) {
     .SurveyEditerPage {
-        width: 85%;
         min-height: 600px;
         box-shadow: 0 3px 4px #254E70;
         margin: 0 auto;
@@ -46,6 +45,7 @@
     .SurveyEditerPage .SurveyPreview {
         width: 70%;
         min-height: 1000px;
+        max-height: none;
         box-shadow: 0 2px 3px #9F9A9A;
         margin: 3px 3px;
         padding: 20px 30px;
@@ -87,4 +87,10 @@
         background-color: #40A4C8;
     }
     
+}
+
+@media(min-width: 999px) {
+    .SurveyEditerPage {
+        width: 90%;
+    }
 }

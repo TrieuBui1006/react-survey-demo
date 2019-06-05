@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {FaPlus, FaMinus} from 'react-icons/fa';
 
+import Button from '@material-ui/core/Button';
+
 class OptionField extends Component {
     render() {
         const { content, onRemove, onClone, onChange, canRemove } = this.props;
@@ -11,12 +13,15 @@ class OptionField extends Component {
                     value={content}
                     onChange={onChange}/>
                 <div>
-                    <button 
-                        type="button"
-                        onClick={onClone}><FaPlus /></button>
-                    {canRemove ? <button 
-                        type="button" 
-                        onClick={onRemove}><FaMinus /></button> : ''}
+                    <Button 
+                        variant="contained"
+                        size="medium"
+                        onClick={onClone}><FaPlus /></Button>
+                    {canRemove ? <Button 
+                        variant="contained"
+                        color="secondary"
+                        size="medium" 
+                        onClick={onRemove}><FaMinus /></Button> : ''}
                 </div>
             </div>
         );

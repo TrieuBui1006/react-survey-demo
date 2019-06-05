@@ -1,0 +1,25 @@
+.Login {
+    margin: 20px auto;
+    width: 500px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.Login h3 {
+    color: #ff1744;
+    font-size: 1.5em;
+    margin: 20px auto;
+    letter-spacing: 3px;
+}
+
+.Login a {
+    text-decoration: none;
+}
+
+@media (max-width: 499px) {
+    .Login {
+        width: 90%;
+    }
+}
