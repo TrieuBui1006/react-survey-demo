@@ -1,18 +1,27 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 import classes from './TopMenuItems.module.css';
 import TopMenuItem from './TopMenuItem/TopMenuItem';
 
-const topMenuItems = () => {
-    return (
-        <ul className={classes.TopMenuItems}>
-            <TopMenuItem link="/user/overview" >Overview</TopMenuItem>
-            <TopMenuItem link="/user/editer" >Editer</TopMenuItem>
-            <TopMenuItem link="/user/test">Test</TopMenuItem>
-            <TopMenuItem link="/user/data" >Data</TopMenuItem>
-            <TopMenuItem link="/user/report" >Report</TopMenuItem>
-        </ul>
-    );
+class TopMenuItems extends Component {
+    render () {
+        return (
+            <ul className={classes.TopMenuItems}>
+                <TopMenuItem link={"/user/" + this.props.surveyId + "/overview"} >Overview</TopMenuItem>
+                <TopMenuItem link={"/user/" + this.props.surveyId + "/editer"} >Editer</TopMenuItem>
+                <TopMenuItem link={"/user/" + this.props.surveyId + "/test"}>Test</TopMenuItem>
+                <TopMenuItem link={"/user/" + this.props.surveyId + "/data"} >Data</TopMenuItem>
+                <TopMenuItem link={"/user/" + this.props.surveyId + "/report"} >Report</TopMenuItem>
+            </ul>
+        );
+    }
 }
 
-export default topMenuItems;
+const mapStateToProps = state => {
+    return {
+        surveyId: state.surveyEditer.survey.id
+    }
+}
+
+export default connect(mapStateToProps)(TopMenuItems);

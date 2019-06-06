@@ -115,6 +115,22 @@ const reducer = (state = initialState, action) => {
                 ]
                 }
             };
+        case actionTypes.GET_SURVEY_ID:
+            return {
+                ...state,
+                survey: {
+                    ...state.survey,
+                    id: action.surveyId
+                }
+            };
+        case actionTypes.RESET_SURVEY_ID:
+            return {
+                ...state,
+                survey: {
+                    ...state.survey,
+                    id: ''
+                }
+            };
         default:
             return state;
     };

@@ -55,5 +55,11 @@ export const cloneQuestion = (question) => {
   }
 };
 
+export const getSurveyId = (surveyId) => {
+  return {
+    type: actionTypes.GET_SURVEY_ID,
+    surveyId: surveyId
+  };
+};
 
 

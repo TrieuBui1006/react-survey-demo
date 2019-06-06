@@ -31,7 +31,7 @@ class App extends Component {
     if(this.props.isAuthenticated) {
       routes = (
         <Switch>
-          <Route path="/user" component={UserPage} />
+          <Route path={"/user/" + this.props.surveyId} component={UserPage} />
           <Route path="/logout" component={Logout} />
           <Route path="/" exact component={HomePage} />
           <Redirect to='/' />  
@@ -51,7 +51,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    isAuthenticated: state.auth.token !== null
+    isAuthenticated: state.auth.token !== null,
+    surveyId: state.surveyEditer.survey.id
   };
 };
 

@@ -9,6 +9,8 @@ export const SORT_QUESTION_UP = 'SORT_QUESTION_UP';
 export const SORT_QUESTION_DOWN = 'SORT_QUESTION_DOWN';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 
+export const GET_SURVEY_ID = 'GET_SURVEY_ID';
+export const RESET_SURVEY_ID = 'RESET_SURVEY_ID';
 
 //-------------------Authentication-------------------
 export const AUTH_START = 'AUTH_START';

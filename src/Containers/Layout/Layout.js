@@ -27,6 +27,7 @@ class Layout extends Component {
                     isAuth={this.props.isAuthenticated}
                     drawerToggleClicked={this.sideDrawerToggleHandler} />
                 <SideDrawer
+                    onUser={this.props.onUser}
                     isAuth={this.props.isAuthenticated}
                     open={this.state.showSideDrawer} 
                     closed={this.sideDrawerCloseHandler} />
@@ -40,7 +41,8 @@ class Layout extends Component {
 
 const mapStateToProps = state => {
     return {
-        isAuthenticated: state.auth.token !== null
+        isAuthenticated: state.auth.token !== null,
+        onUser: state.surveyEditer.survey.id !== '',
     }
 }
 

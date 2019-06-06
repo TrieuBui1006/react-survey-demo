@@ -1,5 +1,5 @@
 import React,{Fragment} from 'react'
-import {Route, Switch, withRouter} from 'react-router-dom';
+import {Route, Switch, withRouter, Redirect} from 'react-router-dom';
 
 import TopMenuBar from '../Components/Navigation/TopMenu/TopMenu';
 import OverviewPage from './OverviewPage';
@@ -14,20 +14,26 @@ const UserPage = (props) => {
             <TopMenuBar />
             <Switch>
                 <Route 
+                    exact
                     path={props.match.url + '/overview'} 
                     component={OverviewPage} />
                 <Route 
+                    exact
                     path={props.match.url + '/editer'} 
                     component={EditerPage} />
                 <Route 
+                    exact
                     path={props.match.url + '/test'} 
                     component={TestPage} />
-                <Route 
+                <Route
+                    exact 
                     path={props.match.url + '/data'}
                     component={DataPage} />
-                <Route 
+                <Route
+                    exact 
                     path={props.match.url + '/report'}
                     component={ReportPage} />
+                <Redirect to='/' />
             </Switch>
         </Fragment>
     )

@@ -29,7 +29,7 @@ const surveyItem = (props) => {
 
     return (
         <div className={classes.SurveyItem}>
-            <div className={classes.Title}>
+            <div>
                 <h3>{props.title}</h3>
                 <div>
                     <p><strong>Creator Date:</strong> {creatorDate}</p>
