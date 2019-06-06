@@ -3,7 +3,8 @@ import {updateObject} from '../../ulitity/ulitity';
 
 const initialState = {
     surveys: [],
-    loading: false
+    loading: false,
+    error: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -16,7 +17,7 @@ const reducer = (state = initialState, action) => {
                 loading: false
             });
         case actionTypes.FETCH_SURVEYS_FAIL:
-            return updateObject(state, {loading: false});
+            return updateObject(state, {loading: false, error: action.error});
         default:
             return state;
     };

@@ -88,12 +88,6 @@ class Login extends Component {
         this.props.onAuth(this.state.controls.email.value, this.state.controls.password.value, this.state.isSignup);
     }
 
-    switchAuthModeHandler = () => {
-        this.setState(prevState => {
-            return {isSignup: !prevState.isSignup};
-        });
-    }
-
     render() {
         const formElementArray = [];
         for (let key in this.state.controls) {

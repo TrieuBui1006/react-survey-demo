@@ -1,0 +1,56 @@
+.SurveyItem {
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+.SurveyItem h3,
+.SurveyItem p {
+    margin: 0 0.5em;
+    display: inline-block;
+}
+
+.SurveyItem h3 {
+    color: #254E70;
+}
+
+.SurveyItem button {
+    margin: 2px;
+    max-height: 35px;
+}
+
+.Switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.GroupeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+@media(max-width: 700px ) {
+    .GroupeButton {
+        flex-direction:column;
+    }
+    .GroupeButton button {
+        width: 100%;
+    }
+    .Switcher label {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction:column;
+        box-sizing: border-box;
+    }
+}

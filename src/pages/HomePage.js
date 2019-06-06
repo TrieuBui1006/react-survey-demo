@@ -1,11 +1,12 @@
 import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 import classes from './HomePage.module.css';
 import Button from '@material-ui/core/Button';
 
 import NewSurvey from '../Containers/SurveyList/NewSurvey/NewSurvey';
+import SurveyList from '../Containers/SurveyList/SurveyList';
 
 class HomePage extends Component {
     render() {
@@ -24,9 +25,12 @@ class HomePage extends Component {
         if(this.props.isAuthenticated) {
             home = (
                 <div className={classes.HomePage}>
-                    <h1>ahihi</h1>
-                    <NewSurvey />
-                    <Link to="/user">Help</Link>
+                    <NewSurvey 
+                        loading={this.props.isLoading}
+                        isError={this.props.isError} />
+                    {/* <Link to="/user">Help</Link> */}
+                    <SurveyList />
+                    {this.props.error ? <p>Check your Internet connection or Sever error</p> : null}
                 </div>
             )
         }
@@ -41,8 +45,11 @@ class HomePage extends Component {
 
 const mapStateToProps = state => {
     return {
-        isAuthenticated: state.auth.token !== null
+        isAuthenticated: state.auth.token !== null,
+        isLoading: state.surveys.loading,
+        error: state.surveys.error,
+        isError: state.surveys.error !== null
     }
 }
 
-export default connect(mapStateToProps)(HomePage);
+export default withRouter(connect(mapStateToProps)(HomePage));

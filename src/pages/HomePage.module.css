@@ -18,5 +18,16 @@
 }
 
 .HomePage {
-    text-align: center;
+    padding: 20px 20px;
+    margin: 10px auto;
+    width: 90%;
+    /* border: 1px solid #ccc;
+    box-shadow: 0 3px 4px #254E70; */
+    box-sizing: border-box;
+}
+
+@media(max-width: 1024px) {
+    .HomePage {
+        width: 100%;
+    }
 }

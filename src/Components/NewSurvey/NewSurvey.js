@@ -6,7 +6,8 @@ const NewSurvey = (props) => {
         variant="contained"
         color="primary"
         size="large"
-        onClick={props.clicked}>New Survey</Button>
+        onClick={props.clicked}
+        disabled={props.isLoading || props.error}>New Survey</Button>
 }
 
 export default NewSurvey;

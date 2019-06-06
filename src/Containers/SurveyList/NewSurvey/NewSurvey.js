@@ -29,7 +29,7 @@ class NewSurvey extends Component {
 
     clickHandler = () => {
         const newSurvey = {...this.state};
-        axios.put('/surveys/' + this.state._id + '.json', newSurvey)
+        axios.put('/surveys/' + this.state._id + '.json?auth=' + this.props.token, newSurvey)
             .then(response => {
                 console.log(response.data);
             })
@@ -46,7 +46,10 @@ class NewSurvey extends Component {
     render() {
         return (
             <div>
-                <NewSurveyView clicked={this.clickHandler} />
+                <NewSurveyView 
+                    clicked={this.clickHandler}
+                    isLoading={this.props.loading}
+                    error={this.props.isError} />
             </div>
         );
     }
@@ -54,7 +57,8 @@ class NewSurvey extends Component {
 
 const mapStateToProps = state => {
     return {
-        user_Id: state.auth.userId
+        user_Id: state.auth.userId,
+        token: state.auth.token
     }
 }
 
