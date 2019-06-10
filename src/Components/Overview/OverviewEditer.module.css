@@ -1,0 +1,29 @@
+.OverviewEditer {
+    border: 1px solid #ccc;
+    padding: 2px 20px;
+    margin: 10px 0;
+    width: 55vw;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.OverviewEditer p,
+.OverviewEditer h2 {
+    margin: 1em 0;
+}
+
+.OverviewEditer h2 {
+    color: #254E70;
+}
+
+.OverviewEditer a {
+    text-decoration: none;
+    color: #e91e63;
+}
+
+@media(max-width: 500px) {
+    .OverviewEditer {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

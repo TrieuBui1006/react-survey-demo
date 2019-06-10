@@ -1,20 +1,38 @@
 import * as actionTypes from '../actions/actionsTypes';
+import {updateObject} from '../../ulitity/ulitity';
 
 const initialState = {
     survey: {
         id: '',
-        title: 'Survey title',
-        subTitle: 'Survey subTitle', 
+        title: '',
+        subTitle: '', 
         questions: {}, 
-        question_order: []
+        question_order: [],
+        creatorDate: '',
+        lastModified: '',
     },
-    isLoading: false,
-    error: null
+    surveyLoading: false,
+    submitLoading: false,
+    error: null,
+    redirect: false
 }
 
 const reducer = (state = initialState, action) => {
     let idx, newOrder;
     switch (action.type) {
+        case actionTypes.FETCH_SURVEY_START:
+            return updateObject(state, {surveyLoading: true});
+        case actionTypes.FETCH_SURVEY_SUCCESS:
+            return {
+                ...state,
+                    survey: {
+                        ...state.survey,
+                        ...action.payload
+                    },
+                    surveyLoading: false
+            };
+        case actionTypes.FETCH_SURVEY_FAIL:
+            return updateObject(state, {surveyLoading: false, error: action.error});
         case actionTypes.ADD_QUESTION:
             return {
                 ...state,
@@ -27,6 +45,12 @@ const reducer = (state = initialState, action) => {
                     question_order: [...state.survey.question_order, action.questionId]
                 }
             };
+        case actionTypes.UPDATE_SURVEY_START:
+            return updateObject(state, {submitLoading: true});
+        case actionTypes.UPDATE_SURVEY_SUCCESS: 
+            return updateObject(state, {submitLoading: false});
+        case actionTypes.UPDATE_SURVEY_FAIL:
+            return updateObject(state, {submitLoading:false, error: action.error});
         case actionTypes.ACTIVE_QUESTION:
             return {
                 ...state,
@@ -128,9 +152,21 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 survey: {
                     ...state.survey,
-                    id: ''
-                }
+                    id: '',
+                    title: '',
+                    subTitle: '', 
+                    questions: {}, 
+                    question_order: [],
+                    creatorDate: '',
+                    lastModified: ''
+                },
+                redirect: false
             };
+        case actionTypes.REDIRECT_PAGE:
+            return {
+                ...state,
+                redirect: true
+            }
         default:
             return state;
     };

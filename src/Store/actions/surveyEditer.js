@@ -2,9 +2,109 @@ import * as actionTypes from './actionsTypes';
 import {InitQuestions} from '../../ulitity/constants/Questions';
 import tabTypes from '../../ulitity/constants/TabTypes';
 import newId from '../../ulitity/idGenerator';
+import axios from '../../axios-order';
 
+//--------------------------------------------------------------------------------------------------
+export const normalizeSurvey = (survey) => {
+  let questions = {};
+  survey.questions.forEach(question => {
+    questions[question._id] = question
+  });
+  let question_order = survey.questions.map(question => question._id);
+  return {
+    title: survey.title,
+    subTitle: survey.subTitle,
+    questions: questions,
+    question_order: question_order,
+    current_question_id: '',
+    creatorDate: survey.creatorDate,
+    lastModified: survey.lastModified
+  };
+};
 
+export const assembleSurvey = (survey) => {
+  const { title, subTitle, questions, creatorDate } = survey;
+  const lastModified = new Date();
+  const orderQuestions = survey.question_order.map(questionId => questions[questionId]);
+  return {
+    title,
+    subTitle,
+    questions: [...orderQuestions],
+    creatorDate,
+    lastModified
+  };
+};
+//---------------------------------------------------------------------------------------------------
 
+//---------------------------------------------------------------------------------------------------
+export const fetchSurveyStart = () => {
+  return {
+    type: actionTypes.FETCH_SURVEY_START
+  };
+};
+
+export const fetchSurveySuccess = (survey) => {
+  return {
+    type: actionTypes.FETCH_SURVEY_SUCCESS,
+    payload: normalizeSurvey(survey)
+  }
+}
+
+export const fetchSurveyFail = (err) => {
+  return {
+    type: actionTypes.FETCH_SURVEY_FAIL,
+    error: err
+  }
+}
+
+export const fetchSurvey = (surveyId, token) => {
+  return dispatch => {
+    dispatch(fetchSurveyStart());
+    const queryParams = '?auth=' + token;
+    axios.get('/surveys/' + surveyId + '/content.json' + queryParams) 
+      .then(res => {
+        dispatch(fetchSurveySuccess(res.data))
+      })
+      .catch(err => {
+        dispatch(fetchSurveyFail(err))
+      })
+  };
+};
+//------------------------------------------------------------------------------------------------
+
+export const updateSurveyStart = () => {
+  return {
+    type: actionTypes.UPDATE_SURVEY_START
+  };
+};
+
+export const updateSurveySuccess = () => {
+  return {
+    type: actionTypes.UPDATE_SURVEY_SUCCESS
+  };
+};
+
+export const updateSurveyFail = (err) => {
+  return {
+    type: actionTypes.UPDATE_SURVEY_FAIL,
+    error: err
+  }
+}
+
+export const updateSurvey = (surveyId, token, data) => {
+  return dispatch => {
+    dispatch(updateSurveyStart());
+    axios.put('/surveys/'+ surveyId +'/content.json?auth=' + token, data)
+      .then(res => {
+          dispatch(updateSurveySuccess());
+      })
+      .catch(err => {
+          dispatch(updateSurveyFail(err));
+      })
+  }
+}; 
+
+//------------------------------------------------------------------------------------------------
 export const addQuestion = (questionType) => {
     let newQuestion = InitQuestions[questionType]();
     return {
@@ -54,6 +154,7 @@ export const cloneQuestion = (question) => {
     }
   }
 };
+//------------------------------------------------------------------------------------------
 
 export const getSurveyId = (surveyId) => {
   return {

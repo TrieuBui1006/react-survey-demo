@@ -5,8 +5,8 @@ import { updateSurveyHeader } from '../../Store/actions/surveyEditer';
 
 const mapStateToProps = (state) => {
   return {
-    title: state.surveyEditer.title,
-    subTitle: state.surveyEditer.subTitle
+    title: state.surveyEditer.survey.title,
+    subTitle: state.surveyEditer.survey.subTitle
   }
 };
 

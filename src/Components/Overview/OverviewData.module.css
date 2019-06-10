@@ -1,0 +1,26 @@
+.Container{
+    padding: 2px 5px;
+    margin: 10px 0;
+    width: 35vw;
+    box-sizing: border-box;
+}
+
+.OverviewData {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 2px 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+@media(max-width: 500px) {
+    .Container {
+        width: 100%;
+        margin: 5px 0;
+        padding-bottom: 20px;
+    }
+    .Container button {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

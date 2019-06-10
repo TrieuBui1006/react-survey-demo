@@ -1,0 +1,15 @@
+.OverviewPage {
+    display: flex;
+    justify-content: space-around;
+    max-width: 90vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+@media(max-width: 500px) {
+    .OverviewPage {
+        flex-direction: column;
+        justify-content: center;
+        max-width: 98nw;
+    }
+}

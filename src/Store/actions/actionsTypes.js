@@ -1,4 +1,4 @@
-//-------------------Survey Editer-------------------
+//////////////////////--Survey Editer--/////////////////////////////////////////////////
 export const ADD_QUESTION = 'ADD_QUESTION';
 export const ACTIVE_QUESTION = 'ACTIVE_QUESTION';
 export const UPDATE_QUESTION = 'UPDATE_QUESTION';
@@ -9,16 +9,33 @@ export const SORT_QUESTION_UP = 'SORT_QUESTION_UP';
 export const SORT_QUESTION_DOWN = 'SORT_QUESTION_DOWN';
 export const REMOVE_QUESTION = 'REMOVE_QUESTION';
 
+//---------Manager Survey in Survey Editer-------
 export const GET_SURVEY_ID = 'GET_SURVEY_ID';
 export const RESET_SURVEY_ID = 'RESET_SURVEY_ID';
+export const REDIRECT_PAGE = 'REDIRECT_PAGE';
 
-//-------------------Authentication-------------------
+//----------FETCH Controller in Survey Editer--------
+export const FETCH_SURVEY_START = 'FETCH_SURVEY_START';
+export const FETCH_SURVEY_SUCCESS = 'FETCH_SURVEY_SUCCESS';
+export const FETCH_SURVEY_FAIL = 'FETCH_SURVEY_FAIL';
+
+//----------UPDATE Controller in survey Editer------
+export const UPDATE_SURVEY_START = 'UPDATE_SURVEY_START';
+export const UPDATE_SURVEY_SUCCESS = 'UPDATE_SURVEY_SUCCESS';
+export const UPDATE_SURVEY_FAIL = 'UPDATE_SURVEY_FAIL';
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////--Authentication--////////////////////////////////////////////////////
 export const AUTH_START = 'AUTH_START';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_FAIL = 'AUTH_FAIL';
 export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+////////////////////////////////////////////////////////////////////////////////////////
 
-//----------------------Surveys-----------------------
+
+////////////////////////--Surveys--/////////////////////////////////////////////////////
 export const FETCH_SURVEYS_START = 'FETCH_SURVEYS_START';
 export const FETCH_SURVEYS_SUCCESS = 'FETCH_SURVEYS_SUCCESS';
 export const FETCH_SURVEYS_FAIL = 'FETCH_SURVEYS_FAIL';
+////////////////////////////////////////////////////////////////////////////////////////

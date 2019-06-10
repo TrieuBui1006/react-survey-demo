@@ -1,31 +1,21 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
 
+import {updateSurvey} from '../../Store/actions/surveyEditer';
+import {assembleSurvey} from '../../Store/actions/surveyEditer';
 import EditFooterView from '../../Components/EditPanel/EditFooter';
-import axios from '../../axios-order';
+import Spinner from '../../Components/UI/Spinner/Spinner';
 
-class EditFooter extends Component {
-    submitSurvey = () => {
-        const surveyData ={
-            id: this.props.survey.id,
-            title: this.props.survey.title,
-            subTitle: this.props.survey.subTitle,
-            question_order: this.props.survey.question_order,
-            questions: this.props.survey.questions
-        } 
-        axios.post('/surveys.json', surveyData)
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            })
-    }; 
-
+class EditFooter extends Component {    
     render() {
+        let submitBtn = <Spinner />
+        if(!this.props.isSubmitting) {
+            submitBtn = <EditFooterView clicked={() => this.props.onSubmit(this.props.surveyId, this.props.token, this.props.survey)}/>
+        }
+
         return (
             <div>
-                <EditFooterView clicked={this.submitSurvey}/>
+                {submitBtn}
             </div>
         )
     }
@@ -33,8 +23,17 @@ class EditFooter extends Component {
 
 const mapStateToProps = state => {
     return {
-        survey: state.surveyEditer.survey
-    }
+        token: state.auth.token,
+        surveyId: state.surveyEditer.survey.id,
+        survey: assembleSurvey(state.surveyEditer.survey),
+        isSubmitting: state.surveyEditer.submitLoading
+    };
 };
 
-export default connect(mapStateToProps)(EditFooter, axios);
+const mapDispatchToProps = dispatch => {
+    return {
+        onSubmit: (surveyId, token, data) => dispatch(updateSurvey(surveyId, token, data))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditFooter);

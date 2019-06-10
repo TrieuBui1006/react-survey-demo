@@ -6,25 +6,37 @@ import axios from '../../../axios-order';
 
 import * as actionTypes from '../../../Store/actions/actionsTypes';
 import NewSurveyView from '../../../Components/NewSurvey/NewSurvey';
+import {InitQuestions} from '../../../ulitity/constants/Questions';
 
 class NewSurvey extends Component {
     state = {
         _id: '',
-        creatorDate: '',
-        lastModified: '',
         userId: '',
         content: {
             title: 'Your Survey Title',
             subTitle: '',
-            question: {},
-            question_order: []
+            creatorDate: '',
+            lastModified: '',
         }
     }
     componentDidMount() {
-        this.setState({
-            _id: newId(),
+        const sampleQuestion = InitQuestions['SINGLE_LINE_TEXT']();
+        const questionObj = {
+            [sampleQuestion._id]: sampleQuestion
+        }
+        let questions = [sampleQuestion._id];
+        const orderQuestions = questions.map(questionId => questionObj[questionId]);
+        const content = {
+            title: 'Your Survey Title',
+            subTitle: '',
             creatorDate: new Date(),
             lastModified: new Date(),
+            questions: [...orderQuestions]
+        }
+
+        this.setState({
+            _id: newId(),
+            content: content,
             userId: this.props.user_Id
         })
     }
@@ -38,11 +50,6 @@ class NewSurvey extends Component {
             .catch(error => {
                 console.log(error);
             })
-            // .then(this.props.history.push('/user/' + this.props.surveyId + '/overview')) 
-        // axios.delete('/surveys/-Lg_jJKP2VhSsF8xC3Kl/content.json')
-        //     .then(response => {
-        //         console.log(response.data);
-        //     })
     };
     
     render() {

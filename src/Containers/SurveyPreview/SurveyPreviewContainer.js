@@ -8,14 +8,6 @@ import {activeQuestion, cloneQuestion} from '../../Store/actions/surveyEditer';
 import * as actionTypes from '../../Store/actions/actionsTypes';
 
 class SurveyPreviewContainer extends Component {
-    componentDidMount() {
-        console.log(this.props.survey);
-    }
-
-    componentDidUpdate() {
-        console.log(this.props.survey);
-    }
-
     render () {
         let { survey, ...rest} = this.props;
         return (

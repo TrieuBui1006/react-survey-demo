@@ -52,10 +52,12 @@ const surveyItem = (props) => {
                 <div className={classes.GroupeButton}>
                 <Button
                     variant="contained"
-                    color="primary" ><FaEdit/>Edit</Button>
+                    color="primary" 
+                    onClick={props.open}><FaEdit/>Edit</Button>
                 <Button
                     variant="contained"
-                    color="secondary" ><FaTimes/>Delete</Button>
+                    color="secondary" 
+                    onClick={props.delete}><FaTimes/>Delete</Button>
                 </div>
             </div>
         </div>
