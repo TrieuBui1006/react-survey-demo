@@ -6,10 +6,16 @@ import SurveyPreview from '../../Components/SurveyPreview/SurveyPreview';
 import QuestionList from '../../Components/SurveyPreview/QuestionList';
 import {activeQuestion, cloneQuestion} from '../../Store/actions/surveyEditer';
 import * as actionTypes from '../../Store/actions/actionsTypes';
+import Spinner from '../../Components/UI/Spinner/Spinner';
 
 class SurveyPreviewContainer extends Component {
     render () {
         let { survey, ...rest} = this.props;
+        
+        if(this.props.onSubmitting) {
+            return <Spinner />
+        }
+
         return (
             <SurveyPreview {...this.props}>
                 <QuestionList {...survey} {...rest}/>
@@ -21,6 +27,7 @@ class SurveyPreviewContainer extends Component {
 const mapStateToProps = state => {
     return {
         survey: state.surveyEditer.survey,
+        onSubmitting: state.surveyEditer.submitLoading
     };
 };
 

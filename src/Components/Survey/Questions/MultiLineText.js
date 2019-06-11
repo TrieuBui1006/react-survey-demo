@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import { Field } from 'formik';
 
 import classes from './Question.module.css';
 
-const singleLineText = (props) => {
+const multiLineText = (props) => {
     return (
         <div className={classes.Question}>
             <h3 className={classes.Label}>{props.title}</h3>
@@ -12,11 +12,11 @@ const singleLineText = (props) => {
                     type="text" 
                     placeholder={props.placeholder} 
                     name={props._id} 
-                    className={classes.Input} 
-                    component='input' />
+                    className={classes.Textarea}
+                    component='textarea' />
             </div>
         </div>
-    );
+    )
 }
 
-export default singleLineText;
+export default multiLineText

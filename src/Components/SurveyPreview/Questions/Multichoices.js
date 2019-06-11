@@ -8,7 +8,7 @@ const multichoice = (props) => {
           <div>
           {options.map((option, index) => {
             return (
-                <div key={option._id} className="radio">
+                <div key={index} className="radio">
                   <label>
                     <input type="radio" name={_id} value={option._id} disabled />
                     {option.content}
