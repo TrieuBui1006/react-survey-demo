@@ -168,6 +168,7 @@
     border: 2px solid #ccc;
     background-color: #fff;
     border-radius: 50%;
+    transition: 300ms;
   }
   
   /* On mouse-over, add a grey background color */
@@ -202,3 +203,17 @@
     border-radius: 50%;
     background: rgba(22, 22, 22, 0.8);
   }
+/*---------------------------------------------------------------------------------------------------------*/
+@media(max-width:900px) {
+    .Question {
+        width: 95%;
+        padding: 8px;
+    }
+}
+
+@media(max-width: 600px) {
+    .Question {
+        width: 95%;
+        padding: 5px;
+    }
+}

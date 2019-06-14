@@ -18,12 +18,13 @@ export const normalizeSurvey = (survey) => {
     question_order: question_order,
     current_question_id: '',
     creatorDate: survey.creatorDate,
-    lastModified: survey.lastModified
+    lastModified: survey.lastModified,
+    submitting: survey.submitting
   };
 };
 
 export const assembleSurvey = (survey) => {
-  const { title, subTitle, questions, creatorDate } = survey;
+  const { title, subTitle, questions, creatorDate, submitting } = survey;
   const lastModified = new Date();
   const orderQuestions = survey.question_order.map(questionId => questions[questionId]);
   return {
@@ -31,7 +32,8 @@ export const assembleSurvey = (survey) => {
     subTitle,
     questions: [...orderQuestions],
     creatorDate,
-    lastModified
+    lastModified,
+    submitting
   };
 };
 //---------------------------------------------------------------------------------------------------
@@ -103,6 +105,32 @@ export const updateSurvey = (surveyId, token, data) => {
       })
   }
 }; 
+
+//------------------------------------------------------------------------------------------------
+export const toggleSubmitSuccess = () => {
+  return {
+    type: actionTypes.TOGGLE_SUBMIT_SUCCESS
+  }
+}
+
+export const toggleSubmitFail = (err) => {
+  return {
+    type: actionTypes.TOGGLE_SUBMIT_FAIL,
+    error: err
+  }
+}
+
+export const toggleSubmit = (surveyId, token, submit) => {
+  return dispatch => {
+    axios.put('/surveys/'+ surveyId +'/content/submitting.json?auth=' + token, submit)
+      .then(res => {
+        dispatch(toggleSubmitSuccess())
+      })
+      .catch(err => {
+        dispatch(toggleSubmitFail(err))
+      });
+  }
+}
 
 //------------------------------------------------------------------------------------------------
 export const addQuestion = (questionType) => {

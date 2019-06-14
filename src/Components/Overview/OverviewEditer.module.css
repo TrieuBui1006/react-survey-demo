@@ -4,6 +4,7 @@
     margin: 10px 0;
     width: 55vw;
     border-radius: 10px;
+    background-color: rgba(204, 204, 204, 0.1);
     box-sizing: border-box;
 }
 

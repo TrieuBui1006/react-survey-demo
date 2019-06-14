@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 import classes from './SurveyEditerPage.module.css';
 import {AutoAffix} from 'react-overlays';
@@ -9,21 +9,24 @@ import EditFooter from '../Containers/EditFooter/EditFooter';
 
 const surveyEditerPage = () => {
     return (
-        <div className={classes.SurveyEditerPage}>
-            <div className={classes.SurveyPreview}>
-                <SurveyPreviewContainer />
-            </div>
-            <div className={classes.SideBar}>
-                <AutoAffix>
-                    <div>
-                        <EditTab />
-                        <div className={classes.Footer}>
-                            <EditFooter />
+        <Fragment>
+            <h3 className={classes.SmallScreen}>Please use bigger screen device for Editer !</h3>
+            <div className={classes.SurveyEditerPage}>
+                <div className={classes.SurveyPreview}>
+                    <SurveyPreviewContainer />
+                </div>
+                <div className={classes.SideBar}>
+                    <AutoAffix>
+                        <div>
+                            <EditTab />
+                            <div className={classes.Footer}>
+                                <EditFooter />
+                            </div>
                         </div>
-                    </div>
-                </AutoAffix>
+                    </AutoAffix>
+                </div>
             </div>
-        </div>
+        </Fragment>
     );
 };
 

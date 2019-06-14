@@ -1,0 +1,33 @@
+.Label {
+    font-weight: 550;
+    font-size: 1em;
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+.Input {
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font: inherit;
+    padding: 5px 10px;
+    display: block;
+    width: 95%;
+    box-sizing: border-box;
+    transition: 300ms;
+}
+
+/*-------------------------------------------------------------------------------------------------------*/
+.Textarea {
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font: inherit;
+    height: 5em;
+    padding: 5px 10px;
+    display: block;
+    width: 95%;
+    box-sizing: border-box;
+    transition: 300ms;
+}

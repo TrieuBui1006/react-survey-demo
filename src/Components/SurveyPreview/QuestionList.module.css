@@ -8,14 +8,15 @@
 
 .QuestionList li {
     display: block;
-    padding: 10px;
+    padding: 0 10px;
     margin: 15px auto;
-    background-color: rgba(238, 235, 235);
+    border: 1px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
+    transition: 300ms;
 }
 
-.QuestionList li textarea {
-    width: 90%;
-    height: 4em;
+.QuestionList li:hover {
+    background-color: rgba(204, 204, 204, 0.2);
+    border: 1px solid #3f51b5;
 }

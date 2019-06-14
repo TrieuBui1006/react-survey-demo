@@ -31,7 +31,8 @@ class NewSurvey extends Component {
             subTitle: '',
             creatorDate: new Date(),
             lastModified: new Date(),
-            questions: [...orderQuestions]
+            questions: [...orderQuestions],
+            submitting: false
         }
 
         this.setState({

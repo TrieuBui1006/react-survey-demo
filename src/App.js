@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import UserPage from './pages/UserPage';
 import Logout from './Containers/Authentication/Logout';
+import UserSurveyPage from './pages/UserSurveyPage';
 
 import {authCheckState} from './Store/actions/authentication';
 
@@ -19,10 +20,11 @@ class App extends Component {
   render () {
     let routes = (
       <Switch>
+        <Route path="/:userId/:SurveyId" component={UserSurveyPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
         <Route path="/" exact component={HomePage} />
-        <Redirect to='/' />  
+        {/* <Redirect to='/' />   */}
       </Switch>
     );
 
@@ -31,6 +33,7 @@ class App extends Component {
         <Switch>
           <Route path={"/user/" + this.props.surveyId} component={UserPage} />
           <Route path="/logout" component={Logout} />
+          <Route path="/:userId/:SurveyId" component={UserSurveyPage} />
           <Route path="/" exact component={HomePage} />
           <Redirect to='/' />  
         </Switch>

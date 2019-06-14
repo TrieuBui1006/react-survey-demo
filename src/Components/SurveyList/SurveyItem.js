@@ -1,4 +1,5 @@
-import React from 'react';   
+import React, {Component} from 'react';   
+import {connect} from 'react-redux';
 
 import Button from '@material-ui/core/Button';
 import {FaEdit, FaTimes} from 'react-icons/fa';
@@ -6,6 +7,8 @@ import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import {withStyles} from '@material-ui/core/styles';
 import lightGreen from '@material-ui/core/colors/lightGreen';
+
+import {toggleSubmit} from '../../Store/actions/surveyEditer';
 
 import classes from './SurveyItem.module.css';
 
@@ -23,14 +26,31 @@ const GreenSwitch = withStyles({
     track: {},
 })(Switch);
 
-const surveyItem = (props) => {
-    const creatorDate = (new Date(props.creatorDate)).toDateString();
-    const lastModified = (new Date(props.lastModified)).toDateString();
+class SurveyItem extends Component {
+    state={
+        submitState: false
+    }
+
+    componentDidMount() {
+        this.setState({submitState: this.props.submitting})
+    }
+
+    switchHandler = () => {
+        this.setState(prevState => {
+            return {submitState: !prevState.submitState}
+        })
+        this.props.onToggle(this.props.surveyId, this.props.token, !this.state.submitState)
+
+    }
+
+    render() {
+        const creatorDate = (new Date(this.props.creatorDate)).toDateString();
+        const lastModified = (new Date(this.props.lastModified)).toDateString();
 
     return (
         <div className={classes.SurveyItem}>
             <div>
-                <h3>{props.title}</h3>
+                <h3>{this.props.title}</h3>
                 <div>
                     <p><strong>Creator Date:</strong> {creatorDate}</p>
                     <p><strong>Last Update:</strong> {lastModified}</p>
@@ -42,7 +62,8 @@ const surveyItem = (props) => {
                     <FormControlLabel
                         control={
                         <GreenSwitch
-                            color="primary"
+                            checked={this.state.submitState}
+                            onChange={() => this.switchHandler()}
                         />
                         }
                         label="Collecting"
@@ -53,15 +74,28 @@ const surveyItem = (props) => {
                 <Button
                     variant="contained"
                     color="primary" 
-                    onClick={props.open}><FaEdit/>Edit</Button>
+                    onClick={this.props.open}><FaEdit/>Edit</Button>
                 <Button
                     variant="contained"
                     color="secondary" 
-                    onClick={props.delete}><FaTimes/>Delete</Button>
+                    onClick={this.props.delete}><FaTimes/>Delete</Button>
                 </div>
             </div>
         </div>
     )
+    }
 }
 
-export default surveyItem;
+const mapStateToProps = state => {
+    return {
+        token: state.auth.token,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onToggle: (surveyId, token, submit) => dispatch(toggleSubmit(surveyId, token, submit))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SurveyItem);

@@ -1,15 +1,19 @@
 import React from "react";
 
+import classes from './QuestionPreview.module.css';
+
 const dropdown = (props) => {
     const { title, options, _id } = props;
     return (
         <div>
-          <h3 className="question-title">{title}</h3>
-          <div className="form-group">
-            <select className="form-control" name={_id} disabled>
+          <h3 className={classes.Label}>{title}</h3>
+          <div>
+            <select className={classes.Input} name={_id} disabled>
               {options.map((option, index) => {
                 return (
-                    <option value={option._id} key={index}>{option.content}</option>
+                    <option 
+                      value={option._id} 
+                      key={option._id}>{option.content}</option>
                 )
               })}
             </select>

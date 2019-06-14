@@ -33,14 +33,15 @@ const overviewEdit = (props) => {
             <FormControlLabel
                 control={
                 <GreenSwitch
-                    color="primary"
+                    checked={props.submit}
+                    onChange={props.onToggle}
                 />
                 }
                 label="Is or Not Collecting"/>
             <p><strong>Link of the survey: </strong> <a 
                 rel="noopener noreferrer"
-                href="https://www.example.com" 
-                target="_blank">www.example.com</a></p>
+                href={"http://localhost:3000/"+ props.userId + "/" + props.surveyId} 
+                target="_blank">{"http://localhost:3000/"+ props.userId + "/" + props.surveyId}</a></p>
         </div>
     )
 }

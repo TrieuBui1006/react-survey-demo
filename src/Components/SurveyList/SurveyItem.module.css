@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-content: center;
     box-sizing: border-box;
+    background-color: rgba(204, 204, 204, 0.1);
 }
 
 .SurveyItem h3,

@@ -30,7 +30,9 @@ class SurveyList extends Component {
                    creatorDate={survey.content.creatorDate}
                    lastModified={survey.content.lastModified} 
                    open={() => this.props.onGetSurveyId(survey._id)}
-                   delete={() => this.deleteSurveyHandler(survey._id)} />
+                   delete={() => this.deleteSurveyHandler(survey._id)}
+                   submitting={survey.content.submitting}
+                   surveyId={survey._id} />
             ))
         }
 

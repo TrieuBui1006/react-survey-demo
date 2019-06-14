@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
 import Survey from '../Components/Survey/Survey';
 import {assembleSurvey} from '../Store/actions/surveyEditer';
+import {submitSurvey} from '../Store/actions/survey';
+
+import classes from './TestPage.module.css';
 
 class TestPage extends Component {
     render () {
         return (
-            <div>
-                <h1>You Are In Test Mode!</h1>
+            <div className={classes.TextPage}>
+                <h3 className={classes.Title}>You Are In Test Mode!</h3>
                 <div>
                     <Survey {...this.props}/>
                 </div>
@@ -23,4 +27,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(TestPage);
+const mapDispatchToProps = dispatch => {
+    return {
+        onSubmit: bindActionCreators(submitSurvey, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TestPage);

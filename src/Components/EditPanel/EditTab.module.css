@@ -40,16 +40,56 @@
     box-sizing: border-box;
 }
 
-.EditTab .Content input,
-.EditTab .Content textarea {
-    width: 90%;
+.EditTab .Content input{
+    outline: none;
+    border: 2px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    font: inherit;
+    padding: 6px 10px;
+    display: block;
+    width: 95%;
+    box-sizing: border-box;
+    transition: 300ms;
+}
+
+.EditTab .Content input:hover {
+    outline: none;
+    border: 2px solid rgba(22, 22, 22, 0.8);
+}
+
+.EditTab .Content input:focus {
+    outline: none;
+    border: 2px solid #3f51b5;
+    background-color: rgb(232, 240, 254);
 }
 
 .EditTab .Content textarea {
-    height: 6em;
+    outline: none;
+    border: 2px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    font: inherit;
+    min-height: 6em;
+    padding: 6px 10px;
+    display: block;
+    width: 95%;
+    box-sizing: border-box;
+    transition: 300ms;
 }
 
-@media(min-width: 799px) {
+.EditTab .Content textarea:hover {
+    outline: none;
+    border: 2px solid rgba(22, 22, 22, 0.8);
+}
+
+.EditTab .Content textarea:focus {
+    outline: none;
+    border: 2px solid #3f51b5;
+    background-color: rgb(232, 240, 254);
+}
+
+@media(min-width: 700px) {
     .EditTab {
         display: initial;
     }

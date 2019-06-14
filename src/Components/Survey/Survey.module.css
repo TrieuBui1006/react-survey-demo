@@ -6,6 +6,8 @@
     border-radius: 10px;
     padding: 10px;
     box-sizing: border-box;
+    padding-bottom: 16px;
+    background-color: rgba(204, 204, 204, 0.15);
 }
 
 .Survey ul {
@@ -16,4 +18,49 @@
 .Title {
     color: #254E70;
     font-size: 1.85em;
+}
+
+.Block {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    color: rgb(226, 33, 33);
+    background-color: rgba(224, 81, 81, 0.514);
+    padding: 10px;
+    border: 2px solid red;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.Success {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    color: #254E70;
+}
+
+.Error {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    color: rgb(226, 33, 33);
+}
+
+@media(max-width: 900px) {
+    .Survey {
+        width: 90%;
+        padding: 8px;
+        padding-bottom: 16px;
+    }
+}
+
+@media(max-width: 600px) {
+    .Survey {
+        width: 95%;
+        padding: 5px;
+        padding-bottom: 16px;
+    }
 }

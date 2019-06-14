@@ -1,5 +1,7 @@
 .QuestionPreviewWrapper {
+    padding: 10px 0;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .GroupButton {

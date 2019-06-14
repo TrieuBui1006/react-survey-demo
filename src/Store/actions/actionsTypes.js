@@ -23,10 +23,14 @@ export const FETCH_SURVEY_FAIL = 'FETCH_SURVEY_FAIL';
 export const UPDATE_SURVEY_START = 'UPDATE_SURVEY_START';
 export const UPDATE_SURVEY_SUCCESS = 'UPDATE_SURVEY_SUCCESS';
 export const UPDATE_SURVEY_FAIL = 'UPDATE_SURVEY_FAIL';
+
+//----------TOGGLE Submitting in Survey Editer-------
+export const TOGGLE_SUBMIT_SUCCESS = 'TOGGLE_SUBMIT_SUCCESS';
+export const TOGGLE_SUBMIT_FAIL = 'TOGGLE_SUBMIT_FAIL';
 /////////////////////////////////////////////////////////////////////////////////////////
 
 
-///////////////////--Authentication--////////////////////////////////////////////////////
+/////////////////////////////--Authentication--////////////////////////////////////////////////////
 export const AUTH_START = 'AUTH_START';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_FAIL = 'AUTH_FAIL';
@@ -38,4 +42,14 @@ export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 export const FETCH_SURVEYS_START = 'FETCH_SURVEYS_START';
 export const FETCH_SURVEYS_SUCCESS = 'FETCH_SURVEYS_SUCCESS';
 export const FETCH_SURVEYS_FAIL = 'FETCH_SURVEYS_FAIL';
+////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////--Survey for fill--////////////////////////////////////////////
+export const FETCH_USER_SURVEY_START = 'FETCH_USER_SURVEY_START';
+export const FETCH_USER_SURVEY_SUCCESS = 'FETCH_USER_SURVEY_SUCCESS';
+export const FETCH_USER_SURVEY_FAIL = 'FETCH_USER_SURVEY_FAIL';
+
+export const SUBMIT_SURVEY_START = 'SUBMIT_SURVEY_START';
+export const SUBMIT_SURVEY_SUCCESS = 'SUBMIT_SURVEY_SUCCESS';
+export const SUBMIT_SURVEY_FAIL = 'SUBMIT_SURVEY_FAIL';
 ////////////////////////////////////////////////////////////////////////////////////////

@@ -10,6 +10,7 @@ const initialState = {
         question_order: [],
         creatorDate: '',
         lastModified: '',
+        submitting: false,
     },
     surveyLoading: false,
     submitLoading: false,
@@ -158,7 +159,8 @@ const reducer = (state = initialState, action) => {
                     questions: {}, 
                     question_order: [],
                     creatorDate: '',
-                    lastModified: ''
+                    lastModified: '',
+                    submitting: false
                 },
                 redirect: false
             };
@@ -166,6 +168,19 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 redirect: true
+            }
+        case actionTypes.TOGGLE_SUBMIT_SUCCESS:
+            return {
+                ...state,
+                survey: {
+                    ...state.survey,
+                    submitting: !state.survey.submitting
+                }
+            }
+        case actionTypes.TOGGLE_SUBMIT_FAIL:
+            return {
+                ...state,
+                error: action.error
             }
         default:
             return state;

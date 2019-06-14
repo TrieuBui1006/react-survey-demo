@@ -1,4 +1,4 @@
-.SurveyEditerPage {
+/* .SurveyEditerPage {
     width: 100%;
     margin: 0 auto;
     border-radius: 3px;
@@ -35,9 +35,7 @@
 @media(min-width: 799px) {
     .SurveyEditerPage {
         min-height: 600px;
-        box-shadow: 0 3px 4px #254E70;
         margin: 0 auto;
-        border-radius: 3px;
         display: flex;
         box-sizing: border-box;
     }
@@ -46,10 +44,10 @@
         width: 70%;
         min-height: 1000px;
         max-height: none;
-        box-shadow: 0 2px 3px #9F9A9A;
+        border: 1px solid #ccc;
         margin: 3px 3px;
         padding: 20px 30px;
-        border-radius: 3px;
+        border-radius: 5px;
         box-sizing: border-box;
     }
     
@@ -57,9 +55,9 @@
         width: 30%;
         min-height: 500px;
         position: initial;
-        box-shadow: 0 2px 3px #9F9A9A;
+        border: 1px solid #ccc;
         margin: 3px 3px;
-        border-radius: 3px;
+        border-radius: 5px;
         box-sizing: border-box;
     }
     
@@ -93,4 +91,91 @@
     .SurveyEditerPage {
         width: 90%;
     }
+} */
+
+.SurveyEditerPage {
+    width: 90%;
+    min-height: 600px;
+    margin: 0 auto;
+    display: flex;
+    box-sizing: border-box;
 }
+
+.SurveyEditerPage .SurveyPreview {
+    width: 70%;
+    min-height: 1000px;
+    max-height: none;
+    border: 1px solid #ccc;
+    margin: 3px 3px;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.SurveyEditerPage .SideBar {
+    width: 30%;
+    min-height: 500px;
+    position: initial;
+    border: 1px solid #ccc;
+    margin: 3px 3px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.SurveyEditerPage .Footer {
+    text-align: center;
+}
+
+.SurveyEditerPage .Footer button {
+    padding: 10px;
+}
+
+button {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+button:hover {
+    color: white;
+    background-color: #254E70;
+}
+
+button:active {
+    color: white;
+    background-color: #40A4C8;
+}
+
+.SmallScreen {
+    display: none;
+}
+
+@media(max-width: 1000px) {
+   .SurveyEditerPage {
+        width: 98%;
+   }
+}
+
+@media(max-width: 800px) {
+    .SurveyEditerPage {
+        width: 100%;
+    }
+    .SurveyEditerPage .SurveyPreview {
+        width: 60%;
+    }
+    .SurveyEditerPage .SideBar {
+        width: 40%;
+    }
+}
+
+
+@media(max-width: 700px) {
+    .SurveyEditerPage{
+        display: none;
+    }
+
+    .SmallScreen {
+        display: block;
+        text-align: center;
+    }
+}   

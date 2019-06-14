@@ -10,7 +10,7 @@ import Spinner from '../Components/UI/Spinner/Spinner';
 
 import classes from './OverviewPage.module.css';
 
-import {fetchSurvey} from '../Store/actions/surveyEditer';
+import {fetchSurvey, toggleSubmit} from '../Store/actions/surveyEditer';
 
 class OverviewPage extends Component {
     componentDidMount() {
@@ -33,7 +33,11 @@ class OverviewPage extends Component {
                     <OverviewEdit
                         title={this.props.title}
                         creatorDate={this.props.creatorDate}
-                        lastModified={this.props.lastModified} />
+                        lastModified={this.props.lastModified}
+                        userId={this.props.userId}
+                        surveyId={this.props.surveyId}
+                        submit={this.props.submitting}
+                        onToggle={() => this.props.onToggle(this.props.surveyId, this.props.token, !this.props.submitting)} />
                     <OverviewData 
                         delete={() => {this.deleteSurveyHandler(this.props.surveyId)}}/>
                 </div>
@@ -52,18 +56,21 @@ const mapStateToProps = state => {
     return {
         surveyId: state.surveyEditer.survey.id,
         token: state.auth.token,
+        userId: state.auth.userId,
         title: state.surveyEditer.survey.title,
         creatorDate: state.surveyEditer.survey.creatorDate,
         lastModified: state.surveyEditer.survey.lastModified,
         redirect: state.surveyEditer.redirect,
-        isLoading: state.surveyEditer.surveyLoading 
+        isLoading: state.surveyEditer.surveyLoading,
+        submitting: state.surveyEditer.survey.submitting
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         onfetchSurvey: (surveyId, token) => dispatch(fetchSurvey(surveyId, token)),
-        onRedirect: () => dispatch({type: actionTypes.REDIRECT_PAGE})
+        onRedirect: () => dispatch({type: actionTypes.REDIRECT_PAGE}),
+        onToggle: (surveyId, token, submit) => dispatch(toggleSubmit(surveyId, token, submit))
     }
 }
 
