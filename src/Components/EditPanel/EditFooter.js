@@ -9,7 +9,7 @@ const EditFooter = (props) => {
                 variant="contained" 
                 color="primary" 
                 size="medium"
-                onClick={props.clicked}>Submit</Button>
+                onClick={props.clicked}>Save Survey</Button>
         </div>
     )
 }

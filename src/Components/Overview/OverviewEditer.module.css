@@ -10,7 +10,7 @@
 
 .OverviewEditer p,
 .OverviewEditer h2 {
-    margin: 1em 0;
+    margin: 0.75em 0;
 }
 
 .OverviewEditer h2 {
@@ -18,8 +18,12 @@
 }
 
 .OverviewEditer a {
+    margin-bottom: 5px;
     text-decoration: none;
     color: #e91e63;
+    overflow: hidden;
+    display: block;
+    overflow-x: auto;
 }
 
 @media(max-width: 500px) {

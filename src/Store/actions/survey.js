@@ -1,6 +1,8 @@
 import * as actionTypes from './actionsTypes';
 import axios from '../../axios-order';
 import {normalizeSurvey} from './surveyEditer';
+import {isEmty} from '../../ulitity/ulitity';
+import newId from '../../ulitity/idGenerator';
 
 export const fetchUserSurveyStart = () => {
     return {
@@ -58,11 +60,17 @@ export const submitSurveyFail = (err) => {
 export const submitSurvey = (data, surveyId) => {
     return dispatch => {
         dispatch(submitSurveyStart());
-        const result = {
-            data: {...data},
-            surveyId: surveyId
+        let result={};
+        const id = newId();
+        if(!isEmty(data)) {
+            result = {
+                id: id,
+                result: {...data},
+                surveyId: surveyId,
+                submitDate: new Date().toString()
+            }
         }
-        axios.post('/results.json', result)
+        axios.put('/results/'+ id +'.json', result)
             .then(res => {
                 dispatch(submitSurveySuccess())
             })

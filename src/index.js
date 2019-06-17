@@ -13,6 +13,7 @@ import tabReducer from './Store/reducers/Tab';
 import authReducer from './Store/reducers/authentication';
 import surveysReducer from './Store/reducers/surveys';
 import surveyReducer from './Store/reducers/survey';
+import dataReducer from './Store/reducers/data';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
     tab: tabReducer,
     auth: authReducer,
     surveys: surveysReducer,
-    survey: surveyReducer
+    survey: surveyReducer,
+    data: dataReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));

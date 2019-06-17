@@ -37,11 +37,12 @@ const overviewEdit = (props) => {
                     onChange={props.onToggle}
                 />
                 }
-                label="Is or Not Collecting"/>
-            <p><strong>Link of the survey: </strong> <a 
-                rel="noopener noreferrer"
-                href={"http://localhost:3000/"+ props.userId + "/" + props.surveyId} 
-                target="_blank">{"http://localhost:3000/"+ props.userId + "/" + props.surveyId}</a></p>
+                label="Is or Not Collecting (turn it on to allow submit!)"/>
+            <p><strong>Link of the survey:</strong></p> 
+            <a 
+              rel="noopener noreferrer"
+              href={"http://localhost:3000/"+ props.surveyId + "/" + props.userId} 
+              target="_blank">{"http://localhost:3000/"+ props.surveyId + "/" + props.userId}</a>
         </div>
     )
 }

@@ -16,6 +16,10 @@ class SurveyPreviewContainer extends Component {
             return <Spinner />
         }
 
+        if(this.props.isError) {
+            return <h3>Network Error!</h3>
+        }
+
         return (
             <SurveyPreview {...this.props}>
                 <QuestionList {...survey} {...rest}/>
@@ -27,7 +31,8 @@ class SurveyPreviewContainer extends Component {
 const mapStateToProps = state => {
     return {
         survey: state.surveyEditer.survey,
-        onSubmitting: state.surveyEditer.submitLoading
+        onSubmitting: state.surveyEditer.submitLoading,
+        isError: state.surveyEditer.error !== null
     };
 };
 

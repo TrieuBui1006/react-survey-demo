@@ -53,3 +53,12 @@ export const SUBMIT_SURVEY_START = 'SUBMIT_SURVEY_START';
 export const SUBMIT_SURVEY_SUCCESS = 'SUBMIT_SURVEY_SUCCESS';
 export const SUBMIT_SURVEY_FAIL = 'SUBMIT_SURVEY_FAIL';
 ////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////--Data--////////////////////////////////////////////////////////
+export const FETCH_DATA_START = 'FETCH_DATA_START';
+export const FETCH_RESULT_SUCCESS = 'FETCH_RESULT_SUCCESS';
+export const FETCH_DATA_SURVEY_SUCCESS = 'FETCH_DATA_SURVEY_SUCCESS';
+export const FETCH_DATA_FAIL = 'FETCH_DATA_FAIL';
+
+export const TOGGLE_ROW_SELECT = 'TOGGLE_ROW_SELECT';
+export const ROW_SET_ALL = 'ROW_SET_ALL';

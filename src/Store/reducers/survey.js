@@ -12,8 +12,8 @@ const initialState = {
         lastModified: '',
         submitting: false,
     },
-    IsFetching: false,
-    IsSubmitting: false,
+    isFetching: false,
+    isSubmitting: false,
     isSuccess: false,
     error: null
 }
@@ -21,7 +21,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.FETCH_USER_SURVEY_START:
-            return updateObject(state, {fetching: true});
+            return updateObject(state, {isFetching: true});
         case actionTypes.FETCH_USER_SURVEY_SUCCESS:
             return {
                 ...state,
@@ -29,16 +29,16 @@ const reducer = (state = initialState, action) => {
                     ...state.survey,
                     ...action.payload
                 },
-                fetching: false
+                isFetching: false
             }
         case actionTypes.FETCH_USER_SURVEY_FAIL:
-            return updateObject(state, {error: action.error, fetching: false});
+            return updateObject(state, {error: action.error, isFetching: false});
         case actionTypes.SUBMIT_SURVEY_START:
-            return updateObject(state, {submitting: true});
+            return updateObject(state, {isSubmitting: true});
         case actionTypes.SUBMIT_SURVEY_SUCCESS:
-            return updateObject(state, {submitting: false, isSuccess: true});
+            return updateObject(state, {isSubmitting: false, isSuccess: true});
         case actionTypes.SUBMIT_SURVEY_FAIL:
-            return updateObject(state, {error: action.error, submitting: false});
+            return updateObject(state, {error: action.error, isSubmitting: false});
         default:
             return state;
     }

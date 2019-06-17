@@ -35,3 +35,11 @@ export const checkValidity = ( value, rules ) => {
     
     return isValid;
 }
+
+export const isEmty = (obj) => {
+    for(let key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}

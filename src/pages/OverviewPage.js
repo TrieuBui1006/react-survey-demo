@@ -11,10 +11,12 @@ import Spinner from '../Components/UI/Spinner/Spinner';
 import classes from './OverviewPage.module.css';
 
 import {fetchSurvey, toggleSubmit} from '../Store/actions/surveyEditer';
+import {fetchData} from '../Store/actions/data';
 
 class OverviewPage extends Component {
     componentDidMount() {
         this.props.onfetchSurvey(this.props.surveyId, this.props.token);
+        this.props.onfetchData(this.props.surveyId, this.props.token)
     }
 
     deleteSurveyHandler = (surveyId) => {
@@ -39,7 +41,8 @@ class OverviewPage extends Component {
                         submit={this.props.submitting}
                         onToggle={() => this.props.onToggle(this.props.surveyId, this.props.token, !this.props.submitting)} />
                     <OverviewData 
-                        delete={() => {this.deleteSurveyHandler(this.props.surveyId)}}/>
+                        delete={() => {this.deleteSurveyHandler(this.props.surveyId)}}
+                        count={this.props.submitCount} />
                 </div>
             )
         }
@@ -62,13 +65,15 @@ const mapStateToProps = state => {
         lastModified: state.surveyEditer.survey.lastModified,
         redirect: state.surveyEditer.redirect,
         isLoading: state.surveyEditer.surveyLoading,
-        submitting: state.surveyEditer.survey.submitting
+        submitting: state.surveyEditer.survey.submitting,
+        submitCount: state.data.results.length
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         onfetchSurvey: (surveyId, token) => dispatch(fetchSurvey(surveyId, token)),
+        onfetchData: (surveyId, token) => dispatch(fetchData(surveyId, token)),
         onRedirect: () => dispatch({type: actionTypes.REDIRECT_PAGE}),
         onToggle: (surveyId, token, submit) => dispatch(toggleSubmit(surveyId, token, submit))
     }

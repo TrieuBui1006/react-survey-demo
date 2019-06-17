@@ -104,18 +104,26 @@ class Login extends Component {
             });
         }
 
-        let form = formElementArray.map(formElement => (
-            <Input
-                key={formElement.id}
-                label={formElement.config.elementLabel}
-                elementType={formElement.config.elementType}
-                elementConfig={formElement.config.elementConfig}
-                value={formElement.config.value} 
-                invalid ={!formElement.config.validity}
-                shouldValidate ={formElement.config.validation}
-                touched={formElement.config.touched}
-                changed={(event) => this.inputChangedHandler(event, formElement.id)} />
-        ));
+        let form = (<form onSubmit={this.submitHandler}>
+                {formElementArray.map(formElement => (
+                    <Input
+                        key={formElement.id}
+                        label={formElement.config.elementLabel}
+                        elementType={formElement.config.elementType}
+                        elementConfig={formElement.config.elementConfig}
+                        value={formElement.config.value} 
+                        invalid ={!formElement.config.validity}
+                        shouldValidate ={formElement.config.validation}
+                        touched={formElement.config.touched}
+                        changed={(event) => this.inputChangedHandler(event, formElement.id)} />
+                ))}
+                <Button
+                            variant="contained"
+                            color="primary"
+                            type="submit"
+                            size="large" 
+                            disabled={!this.state.formIsValid}>SUBMIT</Button>
+                </form>);
 
         if(this.props.loading) {
             form = <Spinner />
@@ -138,15 +146,7 @@ class Login extends Component {
                 <h3>REGISTER</h3>
                 {authRedirect}
                 {errorMessage}
-                <form onSubmit={this.submitHandler}>
-                    {form}
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                        size="large" 
-                        disabled={!this.state.formIsValid}>SUBMIT</Button>
-                </form>
+                {form}    
                 <br />
                 <Link to="/login">
                     <Button

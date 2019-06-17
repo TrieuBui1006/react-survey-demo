@@ -19,11 +19,11 @@ class UserSurveyPage extends Component {
     }
     
     getUserId = (url) => {
-        return url.split('/')[1];
+        return url.split('/')[2];
     }
     
     getSurveyId = (url) => {
-        return url.split('/')[2];
+        return url.split('/')[1];
     }
 
     render() {
@@ -36,7 +36,7 @@ class UserSurveyPage extends Component {
 const mapStatetoProps = state => {
     return {
         survey: assembleSurvey(state.survey.survey),
-        isLoading: state.survey.IsFetching || state.survey.IsSubmitting,
+        isLoading: state.survey.isFetching || state.survey.isSubmitting,
         isSuccess: state.survey.isSuccess,
         isError: state.survey.error !== null,
         AuthSubmit : state.survey.survey.submitting
