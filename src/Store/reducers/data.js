@@ -8,7 +8,7 @@ const initialState = {
         questions:''
     },
     results: [],
-    rowSelect: {},
+    rowSelects: {},
     isLoading: false,
     error: null,
 }
@@ -37,11 +37,21 @@ const reducer = (state = initialState, action) => {
         case actionTypes.ROW_SET_ALL:
             return {
                 ...state,
-                rowSelect: {
-                    ...state.rowSelect,
+                rowSelects: {
+                    ...state.rowSelects,
                     ...action.payload
                 }
             };
+        case actionTypes.DELETE_ROW:
+            return updateObject(state, {results: [...state.results.filter(result => !action.payload[result.id])]})
+        case actionTypes.TOGGLE_ROW_SELECT:
+            return {
+                ...state,
+                rowSelects: {
+                    ...state.rowSelects,
+                    [action.payload]: !state.rowSelects[action.payload]
+                }
+            }
         default:
             return state;
     }

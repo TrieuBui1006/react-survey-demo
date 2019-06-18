@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchData} from '../Store/actions/data';
 import Spinner from '../Components/UI/Spinner/Spinner';
+import ResultTableContainer from '../Containers/Results/ResultTableContainer';
+
 
 class DataPage extends Component {
     componentDidMount() {
@@ -16,7 +18,7 @@ class DataPage extends Component {
 
         return (
             <div>
-                <h1>Under Development</h1>
+                <ResultTableContainer />
             </div>
         )
     }

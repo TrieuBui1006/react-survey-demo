@@ -1,0 +1,67 @@
+.ResultsTable .TableWrapper {
+    margin: 0 10px;
+    overflow: auto;
+}
+
+.ResultsTable .Toolbar {
+    margin: 5px 0;
+}
+  
+.ResultsTable table {
+    font-size: 0.9em;
+    border-collapse: collapse;
+}
+
+.ResultsTable table, th, td {
+    border: 2px solid #ccc;
+}
+
+.ResultsTable table thead {
+    background-color: #254E70;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.ResultsTable table thead th {
+    padding: 5px;
+}
+
+.ResultsTable table tbody {
+    background-color: rgba(204, 204, 204, 0.1);
+}
+
+.ResultsTable table tbody tr:hover {
+    cursor: pointer;
+    background-color: rgb(211, 230, 243) !important;
+    transition: 300ms;
+}
+
+.ResultsTable table td, .ResultsTable table th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
+    max-width: 300px;
+}
+
+.ResultsTable table th.Index, .ResultsTable table td.Index {
+    width: 60px !important;
+}
+
+.ResultsTable table th.SelectBox, .ResultsTable table td.SelectBox {
+    width: 30px !important;
+    text-align: center;
+}
+
+.ResultsTable table th.SelectBox input, .ResultsTable table td.SelectBox input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+@media(max-width: 500px) {
+    .ResultsTable table td, .ResultsTable table th {
+        max-width: 200px;
+    }
+}
+

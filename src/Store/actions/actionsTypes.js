@@ -62,3 +62,4 @@ export const FETCH_DATA_FAIL = 'FETCH_DATA_FAIL';
 
 export const TOGGLE_ROW_SELECT = 'TOGGLE_ROW_SELECT';
 export const ROW_SET_ALL = 'ROW_SET_ALL';
+export const DELETE_ROW = 'DELETE_ROW';

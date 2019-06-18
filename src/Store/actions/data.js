@@ -1,6 +1,7 @@
 import * as actionTypes from './actionsTypes';
 import axios from '../../axios-order';
 import {QuestionTypes} from '../../ulitity/constants/Questions';
+import keyBy from 'lodash/keyBy';
 
 export const fetchResults = (surveyId, token) => {
     const queryParams = '?auth=' + token + '&orderBy="surveyId"&equalTo="' + surveyId + '"';
@@ -51,7 +52,7 @@ export const fetchDataFail = (err) => {
 export const selectAll = (results) => {
     let newState = {};
     results.forEach(result => {
-      newState[result._id] = true;
+      newState[result.id] = true;
     });
     return {
       type: actionTypes.ROW_SET_ALL,
@@ -101,7 +102,7 @@ const resultToText = {
     [QuestionTypes.CHECKBOXES]: (question, result) => {
       return question.options.filter(option => result[option._id]).map(option => option.content).join(", ");
     },
-    [QuestionTypes.MUTLI_LINE_TEXT]: (question, result) => {
+    [QuestionTypes.MULTI_LINE_TEXT]: (question, result) => {
       return result;
     },
     [QuestionTypes.SINGLE_LINE_TEXT]: (question, result) => {
@@ -139,7 +140,7 @@ export const resultsToGrid = (state) => {
   
     let textResults = results.map((result, index) => {
       let resultMap = {
-        _id: result._id,
+        id: result.id,
         _rev: result._rev
       };
   
@@ -150,9 +151,26 @@ export const resultsToGrid = (state) => {
   
       return resultMap;
     });
-  
     return {
       columns,
       results: textResults
     };
   };
+
+export const getRowSelects = (state) => state.rowSelects;
+export const getAllSelected = (state) => Object.keys(state.rowSelects).length && !(Object.keys(state.rowSelects).some(id => !state.rowSelects[id]));
+
+
+export const deleteResults = (results) => {
+    return Promise.all(results.map(result => axios.delete('/results/'+ result.id + '.json')));
+};
+
+export const deleteRows = (deleteds) => dispatch => {
+    return deleteResults(deleteds).then(() => {
+        let deletedMap = keyBy(deleteds, e => e.id);
+        dispatch({
+        type: actionTypes.DELETE_ROW,
+        payload: deletedMap
+        });
+    });
+};
