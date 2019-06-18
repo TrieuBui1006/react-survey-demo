@@ -23,7 +23,7 @@
     color: #e91e63;
     overflow: hidden;
     display: block;
-    overflow-x: auto;
+    text-overflow: ellipsis; 
 }
 
 @media(max-width: 500px) {

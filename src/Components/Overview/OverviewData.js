@@ -10,8 +10,8 @@ const overviewData = (props) => {
         <div className={classes.Container}>
             <div className={classes.OverviewData}>
                 <p><strong>Current result Count:</strong> {props.count}</p>
-                <p><strong>Current result Today:</strong> 0</p>
-                <p><strong>Last Submit As:</strong> Fri Jun 07 2019</p>
+                <p><strong>Current result Today:</strong> {props.currentCount}</p>
+                <p><strong>Last Submit As:</strong> {props.lastSubmit}</p>
             </div>
             <Button
                 variant="contained"

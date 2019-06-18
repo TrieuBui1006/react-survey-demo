@@ -12,6 +12,7 @@ import classes from './OverviewPage.module.css';
 
 import {fetchSurvey, toggleSubmit} from '../Store/actions/surveyEditer';
 import {fetchData} from '../Store/actions/data';
+import {lastSubmitDate, currentResultToday} from '../ulitity/ulitity';
 
 class OverviewPage extends Component {
     componentDidMount() {
@@ -42,7 +43,9 @@ class OverviewPage extends Component {
                         onToggle={() => this.props.onToggle(this.props.surveyId, this.props.token, !this.props.submitting)} />
                     <OverviewData 
                         delete={() => {this.deleteSurveyHandler(this.props.surveyId)}}
-                        count={this.props.submitCount} />
+                        count={this.props.submitCount}
+                        lastSubmit={this.props.lastDate}
+                        currentCount={this.props.currentCount} />
                 </div>
             )
         }
@@ -66,7 +69,9 @@ const mapStateToProps = state => {
         redirect: state.surveyEditer.redirect,
         isLoading: state.surveyEditer.surveyLoading,
         submitting: state.surveyEditer.survey.submitting,
-        submitCount: state.data.results.length
+        submitCount: state.data.results.length,
+        lastDate: lastSubmitDate(state.data.results, state.surveyEditer.survey.creatorDate),
+        currentCount: currentResultToday(state.data.results)
     }
 }
 

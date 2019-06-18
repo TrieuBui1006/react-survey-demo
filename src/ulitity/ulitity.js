@@ -43,3 +43,24 @@ export const isEmty = (obj) => {
     }
     return true;
 }
+
+export const lastSubmitDate = (results, creatorDate) => {
+    let lastDate = new Date(creatorDate);
+    results.forEach(result => {
+        if(new Date(result.submitDate) > lastDate) {
+            lastDate = new Date(result.submitDate)
+        }
+    })
+    return lastDate.toString();
+}
+
+export const currentResultToday = (results) => {
+    let currentSubmit = 0;
+    const today = new Date().toDateString();
+    results.forEach(results => {
+        if(new Date(results.submitDate).toDateString() === today) {
+            currentSubmit++;
+        }
+    })
+    return currentSubmit;
+}
