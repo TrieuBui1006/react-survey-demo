@@ -30,7 +30,8 @@ const reducer = (state = initialState, action) => {
                         ...state.survey,
                         ...action.payload
                     },
-                    surveyLoading: false
+                    surveyLoading: false,
+                    error: null
             };
         case actionTypes.FETCH_SURVEY_FAIL:
             return updateObject(state, {surveyLoading: false, error: action.error});
@@ -49,7 +50,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.UPDATE_SURVEY_START:
             return updateObject(state, {submitLoading: true});
         case actionTypes.UPDATE_SURVEY_SUCCESS: 
-            return updateObject(state, {submitLoading: false});
+            return updateObject(state, {submitLoading: false, error: null});
         case actionTypes.UPDATE_SURVEY_FAIL:
             return updateObject(state, {submitLoading:false, error: action.error});
         case actionTypes.ACTIVE_QUESTION:

@@ -1,5 +1,6 @@
 .ResultsTable .TableWrapper {
     margin: 0 10px;
+    padding-bottom: 20px;
     overflow: auto;
 }
 
@@ -8,7 +9,7 @@
 }
   
 .ResultsTable table {
-    font-size: 0.9em;
+    font-size: 0.75em;
     border-collapse: collapse;
 }
 

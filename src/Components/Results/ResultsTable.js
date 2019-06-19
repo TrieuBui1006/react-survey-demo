@@ -55,7 +55,7 @@ class ResultsTable extends Component {
                     return (
                         <tr
                             key={result.id}
-                            // onClick={() => onClickRow(result, index)}
+                            onClick={() => this.props.onClickRow(result, index)}
                         >
                           <td className={classes.SelectBox}>
                             <input

@@ -14,7 +14,8 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_SURVEYS_SUCCESS:
             return updateObject(state, {
                 surveys: action.surveys,
-                loading: false
+                loading: false,
+                error: null
             });
         case actionTypes.FETCH_SURVEYS_FAIL:
             return updateObject(state, {loading: false, error: action.error});

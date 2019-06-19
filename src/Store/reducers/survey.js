@@ -29,14 +29,15 @@ const reducer = (state = initialState, action) => {
                     ...state.survey,
                     ...action.payload
                 },
-                isFetching: false
+                isFetching: false,
+                error: null
             }
         case actionTypes.FETCH_USER_SURVEY_FAIL:
             return updateObject(state, {error: action.error, isFetching: false});
         case actionTypes.SUBMIT_SURVEY_START:
             return updateObject(state, {isSubmitting: true});
         case actionTypes.SUBMIT_SURVEY_SUCCESS:
-            return updateObject(state, {isSubmitting: false, isSuccess: true});
+            return updateObject(state, {isSubmitting: false, isSuccess: true, error: null});
         case actionTypes.SUBMIT_SURVEY_FAIL:
             return updateObject(state, {error: action.error, isSubmitting: false});
         default:

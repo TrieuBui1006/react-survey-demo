@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 
-import {resultsToGrid, getRowSelects, getAllSelected, toggleRowSelect, selectAll, unSelectAll, deleteRows} from '../../Store/actions/data';
+import {resultsToGrid, getRowSelects, getAllSelected, toggleRowSelect, selectAll, unSelectAll, deleteRows, openModal} from '../../Store/actions/data';
 import ResultTable from '../../Components/Results/ResultsTable';
 
 class ResultTableContainer extends Component {
@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        // onClickRow: bindActionCreators(openModal, dispatch),
+        onClickRow: bindActionCreators(openModal, dispatch),
         onSelectRow: bindActionCreators(toggleRowSelect, dispatch),
         onSelectAll: bindActionCreators(selectAll, dispatch),
         onUnSelectAll: bindActionCreators(unSelectAll, dispatch),

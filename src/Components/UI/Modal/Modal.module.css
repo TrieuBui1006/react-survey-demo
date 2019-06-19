@@ -1,0 +1,57 @@
+.Modal {
+    position: fixed;
+    z-index: 500;
+    background-color: white;
+    width: 75%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 0.9em;
+    left: 12.5%;
+    top: 15%;
+    box-sizing: border-box;
+    transition: all 0.35s ease-out;
+}
+
+.Modal h4 {
+    margin-top: 0.2em;
+    margin-bottom: 0;
+}
+
+.Modal p {
+    margin-top: 0;
+    margin-bottom: 0.8em;
+}
+
+.Modal .Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+}
+
+.Modal .Header h3 {
+    margin: 0 10px;
+    color: #254E70;
+    font-size: 1.4em;
+}
+
+.Modal .Content {
+    margin-top: 2px;
+    max-height: 58vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+@media(max-width: 500px) {
+    .Modal {
+        width: 80%;
+        top: 10%;
+        left: 10%;
+    }
+
+    .Modal ul {
+        padding-left: 20px;
+    }
+}

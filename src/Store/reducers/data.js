@@ -9,6 +9,11 @@ const initialState = {
     },
     results: [],
     rowSelects: {},
+    modal: {
+        result: {},
+        showModal: false,
+        view: 'READ'
+    },
     isLoading: false,
     error: null,
 }
@@ -51,7 +56,25 @@ const reducer = (state = initialState, action) => {
                     ...state.rowSelects,
                     [action.payload]: !state.rowSelects[action.payload]
                 }
+            };
+        case actionTypes.OPEN_MODAL:
+            return {
+                ...state,
+                modal: {
+                    ...state.modal,
+                    showModal: true,
+                    result: action.payload,
+                    view: 'READ'
+                }
+            };
+        case actionTypes.CLOSE_MODAL:
+        return {
+            ...state,
+            modal: {
+                ...state.modal,
+                showModal: false
             }
+        };
         default:
             return state;
     }

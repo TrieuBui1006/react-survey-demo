@@ -1,14 +1,19 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {connect} from 'react-redux';
+
 import {fetchData} from '../Store/actions/data';
 import Spinner from '../Components/UI/Spinner/Spinner';
 import ResultTableContainer from '../Containers/Results/ResultTableContainer';
-
+import ModalContainer from '../Containers/Results/ModalContainer';
 
 class DataPage extends Component {
     componentDidMount() {
         this.props.onFetchData(this.props.surveyId, this.props.token);
     }
+
+    // componentDidUpdate() {
+    //     console.log(this.props.modalColumns);
+    // }
 
     render() {
 
@@ -17,9 +22,10 @@ class DataPage extends Component {
         }
 
         return (
-            <div>
+            <Fragment>
                 <ResultTableContainer />
-            </div>
+                <ModalContainer />
+            </Fragment>
         )
     }
 }

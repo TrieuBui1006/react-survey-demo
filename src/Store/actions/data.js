@@ -174,3 +174,23 @@ export const deleteRows = (deleteds) => dispatch => {
         });
     });
 };
+
+export const openModal = (result) => {
+  return {
+    type: actionTypes.OPEN_MODAL,
+    payload: result
+  };
+};
+
+export const closeModal = () => {
+  return {
+    type: actionTypes.CLOSE_MODAL
+  };
+};
+
+export const getColumns = (state) => state.survey.questions.map(question => {
+  return {
+    columnName: question._id,
+    displayName: question.title
+  };
+});
