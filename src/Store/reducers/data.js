@@ -14,6 +14,7 @@ const initialState = {
         showModal: false,
         view: 'READ'
     },
+    reportFilter: {},
     isLoading: false,
     error: null,
 }
@@ -75,6 +76,8 @@ const reducer = (state = initialState, action) => {
                 showModal: false
             }
         };
+        case actionTypes.SET_FILTER:
+            return updateObject(state, {reportFilter: action.payload})
         default:
             return state;
     }

@@ -1,0 +1,11 @@
+.Report {
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.Counter {
+    margin: 0.5em 30px;
+    color: #e91e63;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}

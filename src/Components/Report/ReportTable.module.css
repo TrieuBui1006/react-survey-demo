@@ -1,0 +1,29 @@
+.ReportTable table {
+    font-size: 0.85em;
+    width: 60vw;
+    border-collapse: collapse;
+}
+
+.ReportTable table thead {
+    background-color: #254E70;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.ReportTable table tbody {
+    background-color: #fff;
+}
+
+.ReportTable table td, .ResultsTable table th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
+    max-width: 300px;
+}
+
+@media(max-width: 780px) {
+    .ReportTable table {
+        width: 80vw;
+    }
+}

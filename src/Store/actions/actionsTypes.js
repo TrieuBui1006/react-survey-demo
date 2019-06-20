@@ -66,3 +66,5 @@ export const DELETE_ROW = 'DELETE_ROW';
 
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
+
+export const SET_FILTER = 'SET_FILTER';
