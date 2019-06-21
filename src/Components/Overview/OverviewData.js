@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Button from '@material-ui/core/Button';
-import {FaTimes} from 'react-icons/fa';
+import {FaTrashAlt} from 'react-icons/fa';
 
 import classes from './OverviewData.module.css';
 
@@ -17,7 +17,7 @@ const overviewData = (props) => {
                 variant="contained"
                 color="secondary"
                 size="large"
-                onClick={props.delete}><FaTimes/> Delete</Button>
+                onClick={props.delete}><FaTrashAlt/> Delete</Button>
         </div>
     )
 }

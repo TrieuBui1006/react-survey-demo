@@ -1,6 +1,6 @@
 .ReportItemWrapper {
     width: 90vw;
-    padding: 5px;
+    padding: 8px;
     margin: 10px auto;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -17,10 +17,13 @@
 
 .Title {
     margin-left: 20px;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
 }
 
 .Graph {
     background-color: #fff;
     border-radius: 5px;
     margin-bottom: 0.25em;
+    font-size: 0.8em;
 }

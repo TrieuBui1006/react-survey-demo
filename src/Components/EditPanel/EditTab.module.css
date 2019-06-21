@@ -37,6 +37,7 @@
     display: block;
     padding: 5px;
     margin: 3px;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -49,7 +50,11 @@
     padding: 6px 10px;
     display: block;
     width: 95%;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -o-transition: 300ms;
     transition: 300ms;
 }
 
@@ -74,7 +79,11 @@
     padding: 6px 10px;
     display: block;
     width: 95%;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -o-transition: 300ms;
     transition: 300ms;
 }
 

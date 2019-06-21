@@ -1,6 +1,8 @@
 .Report {
     width: 100vw;
     margin: 0 auto;
+    padding-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .Counter {

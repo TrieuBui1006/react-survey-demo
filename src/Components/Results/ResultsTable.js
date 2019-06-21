@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
 
 import classes from './ResultsTable.module.css';
+import {FaTrashAlt} from 'react-icons/fa';
 
 class ResultsTable extends Component {
     toggleSelectAll() {
@@ -31,7 +32,7 @@ class ResultsTable extends Component {
                     variant="contained"
                     color="secondary"
                     size="medium"
-                    onClick={() => onDeleteRow(results.filter(r => rowSelects[r.id]))}>Delete</Button>
+                    onClick={() => onDeleteRow(results.filter(r => rowSelects[r.id]))}><FaTrashAlt/> Delete</Button>
                 </div>
                 <table>
                   <thead>

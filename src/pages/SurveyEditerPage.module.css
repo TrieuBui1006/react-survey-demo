@@ -138,12 +138,12 @@ button {
 
 button:hover {
     color: white;
-    background-color: #254E70;
+    background-color: #3f51b5;
 }
 
 button:active {
     color: white;
-    background-color: #40A4C8;
+    background-color: #2196f3;
 }
 
 .SmallScreen {

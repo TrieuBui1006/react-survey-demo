@@ -16,7 +16,7 @@
 }
 
 .Title {
-    color: #254E70;
+    color: #1a237e;
     font-size: 1.85em;
 }
 
@@ -25,10 +25,10 @@
     text-transform: uppercase;
     font-size: 1.5em;
     letter-spacing: 0.1em;
-    color: rgb(226, 33, 33);
-    background-color: rgba(224, 81, 81, 0.514);
+    color: #e91e63;
+    background-color: #ec40798f;
     padding: 10px;
-    border: 2px solid red;
+    border: 2px solid #e91e63;
     border-radius: 10px;
     box-sizing: border-box;
 }
@@ -38,7 +38,7 @@
     text-transform: uppercase;
     font-size: 1.5em;
     letter-spacing: 0.1em;
-    color: #254E70;
+    color: #1a237e;
 }
 
 .Error {
@@ -46,7 +46,7 @@
     text-transform: uppercase;
     font-size: 1.5em;
     letter-spacing: 0.1em;
-    color: rgb(226, 33, 33);
+    color: #e91e63;
 }
 
 @media(max-width: 900px) {

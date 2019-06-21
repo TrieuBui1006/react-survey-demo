@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     padding: 0px 50px;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     z-index: 90;
 }

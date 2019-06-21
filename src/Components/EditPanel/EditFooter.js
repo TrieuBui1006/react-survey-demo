@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Button from '@material-ui/core/Button';
+import {FaRegSave} from 'react-icons/fa';
 
 const EditFooter = (props) => {
     return (
@@ -9,7 +10,7 @@ const EditFooter = (props) => {
                 variant="contained" 
                 color="primary" 
                 size="medium"
-                onClick={props.clicked}>Save Survey</Button>
+                onClick={props.clicked}><FaRegSave/> Save Survey</Button>
         </div>
     )
 }

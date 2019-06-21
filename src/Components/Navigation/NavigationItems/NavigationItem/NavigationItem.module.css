@@ -1,5 +1,6 @@
 .NavigationItem {
     margin: 10px 0;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
     font-size: 1.25em;
@@ -7,9 +8,10 @@
 }
 
 .NavigationItem a {
-    color:#254E70;
+    color:#1a237e;
     text-decoration: none;
     width: 100%;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
 }
@@ -17,7 +19,7 @@
 .NavigationItem a:hover,
 .NavigationItem a:active,
 .NavigationItem a.active {
-    color: #40A4C8;
+    color: #2196f3;
 }
 
 @media (min-width: 500px) {
@@ -41,7 +43,7 @@
     .NavigationItem a:active,
     .NavigationItem a.active {
         background-color: transparent;
-        border-bottom: 4px solid #40A4C8;
+        border-bottom: 4px solid #2196f3;
         color: white;
     }
 }

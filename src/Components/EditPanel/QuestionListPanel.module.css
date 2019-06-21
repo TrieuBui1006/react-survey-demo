@@ -1,5 +1,6 @@
 .QuestionListPanel {
     width: 100%;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -7,5 +8,6 @@
     width: 100%;
     margin: 3px auto;
     padding: 12px;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
