@@ -20,7 +20,8 @@ const questionList = (props) => {
                             onRemove={() => props.onRemove(question)}
                             onClone={() => props.onClone(question)}
                             onUp={() => props.onUp(question)}
-                            onDown={() => props.onDown(question)} />
+                            onDown={() => props.onDown(question)}
+                            onOpenModal={() => props.onOpenModal()} />
                     </li>
                 );
             })}

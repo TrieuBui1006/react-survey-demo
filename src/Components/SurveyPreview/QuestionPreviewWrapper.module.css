@@ -8,14 +8,15 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding: 5px;
+    margin-top: 3px;
     box-sizing: border-box;
 }
 
 .GroupButton button {
-    padding: 5px 8px;
+    font-size: 0.9em;
+    padding: 5px 4px;
+    color: #fff;
     box-sizing: border-box;
-    margin: 2px;
 }
 
 @media(min-width: 799px) {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Field } from 'formik';
 
 import classes from './Question.module.css';
@@ -19,4 +19,4 @@ const multiLineText = (props) => {
     )
 }
 
-export default multiLineText
+export default multiLineText;

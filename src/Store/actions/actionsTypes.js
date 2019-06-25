@@ -27,6 +27,9 @@ export const UPDATE_SURVEY_FAIL = 'UPDATE_SURVEY_FAIL';
 //----------TOGGLE Submitting in Survey Editer-------
 export const TOGGLE_SUBMIT_SUCCESS = 'TOGGLE_SUBMIT_SUCCESS';
 export const TOGGLE_SUBMIT_FAIL = 'TOGGLE_SUBMIT_FAIL';
+
+export const OPEN_MODAL_EDITER = 'OPEN_MODAL_EDITER';
+export const CLOSE_MODAL_EDITER = 'CLOSE_MODAL_EDITER';
 /////////////////////////////////////////////////////////////////////////////////////////
 
 

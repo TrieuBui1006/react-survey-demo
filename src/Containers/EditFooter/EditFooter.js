@@ -4,18 +4,14 @@ import {connect} from 'react-redux';
 import {updateSurvey} from '../../Store/actions/surveyEditer';
 import {assembleSurvey} from '../../Store/actions/surveyEditer';
 import EditFooterView from '../../Components/EditPanel/EditFooter';
-import Spinner from '../../Components/UI/Spinner/Spinner';
 
 class EditFooter extends Component {    
     render() {
-        let submitBtn = <Spinner />
-        if(!this.props.isSubmitting) {
-            submitBtn = <EditFooterView clicked={() => this.props.onSubmit(this.props.surveyId, this.props.token, this.props.survey)}/>
-        }
-
         return (
             <div>
-                {submitBtn}
+                <EditFooterView 
+                    clicked={() => this.props.onSubmit(this.props.surveyId, this.props.token, this.props.survey)}
+                    submit={this.props.isSubmitting}/>
             </div>
         )
     }

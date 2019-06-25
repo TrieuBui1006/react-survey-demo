@@ -3,7 +3,7 @@ import {BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid} from 'recharts';
 
 
 const reportGraph = (props) => {
-    const { data } = props;
+    const { data, width } = props;
 
     let toolTipStyle = {
         maxWidth: '320px',
@@ -51,7 +51,7 @@ const reportGraph = (props) => {
         <div>
             <BarChart 
                 data={data} 
-                width={window.innerWidth*0.8} 
+                width={width*0.8} 
                 height={height}
                 margin={margin}>
                 <XAxis dataKey="name" tick={tick} tickSize={4} stroke='#e91e63'/>

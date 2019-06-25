@@ -15,7 +15,8 @@ const initialState = {
     surveyLoading: false,
     submitLoading: false,
     error: null,
-    redirect: false
+    redirect: false,
+    showModal: false,
 }
 
 const reducer = (state = initialState, action) => {
@@ -183,6 +184,10 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 error: action.error
             }
+        case actionTypes.OPEN_MODAL_EDITER:
+            return updateObject(state, {showModal: true});
+        case actionTypes.CLOSE_MODAL_EDITER:
+            return updateObject(state, {showModal: false});
         default:
             return state;
     };

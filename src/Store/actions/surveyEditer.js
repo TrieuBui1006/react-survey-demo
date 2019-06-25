@@ -191,4 +191,14 @@ export const getSurveyId = (surveyId) => {
   };
 };
 
+export const openModal = () => {
+  return {
+    type: actionTypes.OPEN_MODAL_EDITER
+  };
+};
 
+export const closeModal = () => {
+  return {
+    type: actionTypes.CLOSE_MODAL_EDITER
+  };
+};

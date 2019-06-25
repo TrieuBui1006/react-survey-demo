@@ -8,8 +8,11 @@ import Dropdown from './Questions/Dropdown';
 import Multichoice from './Questions/Multichoices';
 import classes from './QuestionPreviewWrapper.module.css';
 
-import {FaPlus, FaMinus, FaArrowUp, FaArrowDown} from 'react-icons/fa'
+import {FaPlus, FaMinus, FaArrowUp, FaArrowDown, FaEdit} from 'react-icons/fa';
 import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import lightGreen from '@material-ui/core/colors/lightGreen';
+import {withStyles} from '@material-ui/core/styles';
 
 const questionMap = {
     [QuestionTypes.SINGLE_LINE_TEXT]: (props) => {
@@ -29,18 +32,50 @@ const questionMap = {
     }
 };
 
+const ColorButton = withStyles(theme => ({
+    root: {
+      color: theme.palette.getContrastText(lightGreen['A400']),
+      backgroundColor: lightGreen['A400'],
+      '&:hover': {
+        backgroundColor: lightGreen['A700'],
+      },
+    },
+}))(Button);
+
+let edit = false;
+if(window.innerWidth <= 650) {
+    edit = true;
+}
+
+
 const QuestionPreviewWrapper = (props) => {
-    const {question, onActive, onRemove, onClone, onUp, onDown, showUp, showDown} = props;
+    const {question, onActive, onRemove, onClone, onUp, onDown, showUp, showDown, onOpenModal} = props;
     let quest = questionMap[question.type](question);
     return(
         <div onClick={() => { onActive(question._id) }} className={classes.QuestionPreviewWrapper}>
             {quest}
             <div className={classes.GroupButton}>
+                {edit ?
+                    <ColorButton
+                        variant="contained"
+                        size="small"
+                        color="primary"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            onActive(question._id);
+                            onOpenModal();
+                        }} ><FaEdit/></ColorButton> : ''
+                }
+                <ButtonGroup
+                    variant="contained"
+                    size="large"
+                    color="primary"
+                    aria-label="Full-width contained primary button group">
                 {showUp ?
                     <Button
                         variant="contained"
                         color="primary"
-                        size="medium"
+                        size="small"
                         onClick={(e) => {
                             e.preventDefault();
                             onUp(question._id);
@@ -51,7 +86,7 @@ const QuestionPreviewWrapper = (props) => {
                 {showDown ? <Button
                     variant="contained"
                     color="primary"
-                    size="medium"
+                    size="small"
                     onClick={(e) => {
                         e.preventDefault();
                         onDown(question._id);
@@ -61,7 +96,7 @@ const QuestionPreviewWrapper = (props) => {
                 <Button
                     variant="contained"
                     color="primary"
-                    size="medium"
+                    size="small"
                     onClick={(e) => { 
                         e.preventDefault();
                         e.stopPropagation(); 
@@ -69,16 +104,17 @@ const QuestionPreviewWrapper = (props) => {
                     }}>
                     <FaPlus />
                 </Button>
-                <Button
+                </ButtonGroup>
+                {showUp ? <Button
                     variant="contained"
                     color="secondary"
-                    size="medium"
+                    size="small"
                     onClick={(e) => {
                         e.preventDefault();
                         onRemove(question._id);
                     }}>
                     <FaMinus />
-                </Button>
+                </Button> : ''}
           </div>
         </div>
     );   

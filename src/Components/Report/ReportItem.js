@@ -6,6 +6,14 @@ import ReportTable from './ReportTable';
 import classes from './ReportItem.module.css';
 
 class ReportItem extends Component {
+  state = {
+    width: 500
+  }
+
+  componentWillMount() {
+    this.setState({width: window.innerWidth})
+  }
+
     render() {
       let { data } = this.props;
       return (
@@ -15,7 +23,9 @@ class ReportItem extends Component {
                 key={data.title}
                 className={classes.ReportItem}>
               <div className={classes.Graph}>
-                <ReportGraph data={data.stats}/>
+                <ReportGraph 
+                  data={data.stats}
+                  width={this.state.width} />
               </div>
               <div>
                 <ReportTable data={data.stats}/>

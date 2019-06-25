@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import SurveyPreview from '../../Components/SurveyPreview/SurveyPreview';
 import QuestionList from '../../Components/SurveyPreview/QuestionList';
-import {activeQuestion, cloneQuestion} from '../../Store/actions/surveyEditer';
+import {activeQuestion, cloneQuestion, openModal} from '../../Store/actions/surveyEditer';
 import * as actionTypes from '../../Store/actions/actionsTypes';
 import Spinner from '../../Components/UI/Spinner/Spinner';
 
@@ -54,7 +54,8 @@ const mapDispatchToProps = (dispatch) => {
         onRemove: (question) => dispatch({
             type: actionTypes.REMOVE_QUESTION,
             questionId: question._id
-        })
+        }),
+        onOpenModal: bindActionCreators(openModal, dispatch)
     }
 }    
 export default connect(mapStateToProps, mapDispatchToProps)(SurveyPreviewContainer);

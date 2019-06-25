@@ -7,10 +7,11 @@ const EditFooter = (props) => {
     return (
         <div>
             <Button 
+                disabled={props.submit}
                 variant="contained" 
                 color="primary" 
                 size="medium"
-                onClick={props.clicked}><FaRegSave/> Save Survey</Button>
+                onClick={props.clicked}><FaRegSave/> Save</Button>
         </div>
     )
 }
