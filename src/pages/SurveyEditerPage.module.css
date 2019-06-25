@@ -181,12 +181,12 @@ button:active {
     .SurveyEditerPage .SurveyPreview {
         width: 98%;
         padding: 0;
-        margin-bottom: 40px;
+        margin-bottom: 60px;
     }
 
     .SurveyEditerPage .ForMobile {
         display: block;
-        height: 50px;
+        height: 70px;
         position: fixed;
         bottom: 0;
         border: 1px solid #ccc;
@@ -201,12 +201,14 @@ button:active {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-size: 0.6em;
         padding: 0 5px;
         box-sizing: border-box;
     }
 
-    /* .SmallScreen {
-        display: block;
-        text-align: center;
-    } */
+    .SurveyEditerPage .ForMobile button {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
 }   
