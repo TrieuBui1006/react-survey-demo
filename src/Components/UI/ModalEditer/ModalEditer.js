@@ -6,7 +6,7 @@ import classes from './ModalEditer.module.css';
 import Backdrop from '../Backdrop/Backdrop';
 import IconButton from '@material-ui/core/IconButton';
 import {closeModal} from '../../../Store/actions/surveyEditer';
-import {FaTimes} from 'react-icons/fa';
+import Icon from '@material-ui/core/Icon';
 
 class Modal extends Component {
     render() {
@@ -22,7 +22,7 @@ class Modal extends Component {
                         <h3>Edit</h3>
                         <IconButton 
                             size="medium"
-                            onClick={() => this.props.modalClosed()} ><FaTimes /></IconButton>
+                            onClick={() => this.props.modalClosed()} ><Icon>close</Icon></IconButton>
                     </div>
                     <div className={classes.Content}>
                         <EditTab />

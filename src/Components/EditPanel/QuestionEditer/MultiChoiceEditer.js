@@ -21,7 +21,7 @@ class MultichoiceEditer extends Component {
                 <form>
                     <div>
                         <label><b>Field Label</b></label>
-                        <input
+                        <textarea
                             type="text"
                             value={title}
                             ref={node => {this.title_node = node}}

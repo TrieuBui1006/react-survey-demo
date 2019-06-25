@@ -8,7 +8,7 @@ import Dropdown from './Questions/Dropdown';
 import Multichoice from './Questions/Multichoices';
 import classes from './QuestionPreviewWrapper.module.css';
 
-import {FaPlus, FaMinus, FaArrowUp, FaArrowDown, FaEdit} from 'react-icons/fa';
+import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import lightGreen from '@material-ui/core/colors/lightGreen';
@@ -64,7 +64,7 @@ const QuestionPreviewWrapper = (props) => {
                             e.preventDefault();
                             onActive(question._id);
                             onOpenModal();
-                        }} ><FaEdit/></ColorButton> : ''
+                        }} ><Icon>edit</Icon></ColorButton> : ''
                 }
                 <ButtonGroup
                     variant="contained"
@@ -80,7 +80,7 @@ const QuestionPreviewWrapper = (props) => {
                             e.preventDefault();
                             onUp(question._id);
                         }}>
-                        <FaArrowUp />
+                        <Icon>arrow_upward</Icon>
                     </Button> : ''
                 }
                 {showDown ? <Button
@@ -91,7 +91,7 @@ const QuestionPreviewWrapper = (props) => {
                         e.preventDefault();
                         onDown(question._id);
                     }}>
-                    <FaArrowDown />
+                    <Icon>arrow_downward</Icon>
                 </Button> : ''}
                 <Button
                     variant="contained"
@@ -102,7 +102,7 @@ const QuestionPreviewWrapper = (props) => {
                         e.stopPropagation(); 
                         onClone(question._id);
                     }}>
-                    <FaPlus />
+                    <Icon>add</Icon>
                 </Button>
                 </ButtonGroup>
                 {showUp ? <Button
@@ -113,7 +113,7 @@ const QuestionPreviewWrapper = (props) => {
                         e.preventDefault();
                         onRemove(question._id);
                     }}>
-                    <FaMinus />
+                    <Icon>remove</Icon>
                 </Button> : ''}
           </div>
         </div>

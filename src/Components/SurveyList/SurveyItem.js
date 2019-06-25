@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import Button from '@material-ui/core/Button';
-import {FaEye, FaTrashAlt} from 'react-icons/fa';
+import Icon from '@material-ui/core/Icon';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import {withStyles} from '@material-ui/core/styles';
@@ -74,11 +74,11 @@ class SurveyItem extends Component {
                 <Button
                     variant="contained"
                     color="primary" 
-                    onClick={this.props.open}><FaEye/>View</Button>
+                    onClick={this.props.open}><Icon>visibility</Icon>View</Button>
                 <Button
                     variant="contained"
                     color="secondary" 
-                    onClick={this.props.delete}><FaTrashAlt/>Delete</Button>
+                    onClick={this.props.delete}><Icon>delete</Icon>Delete</Button>
                 </div>
             </div>
         </div>

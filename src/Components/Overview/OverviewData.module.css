@@ -20,6 +20,9 @@
         margin: 5px 0;
         padding-bottom: 20px;
     }
+    .OverviewData {
+        font-size: 0.9em;
+    }
     .Container button {
         width: 100%;
         margin: 0 auto;
