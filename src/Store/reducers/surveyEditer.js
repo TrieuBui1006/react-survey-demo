@@ -109,7 +109,7 @@ const reducer = (state = initialState, action) => {
                 }
             };
         case actionTypes.CLONE_QUESTION:
-            idx = state.survey.question_order.indexOf(action.questionId);
+            idx = state.survey.question_order.indexOf(action.payload.questionId);
             return {
                 ...state,
                 survey: {

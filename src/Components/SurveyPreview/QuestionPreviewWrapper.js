@@ -100,12 +100,12 @@ const QuestionPreviewWrapper = (props) => {
                     onClick={(e) => { 
                         e.preventDefault();
                         e.stopPropagation(); 
-                        onClone(question._id);
+                        onClone();
                     }}>
                     <Icon>add</Icon>
                 </Button>
                 </ButtonGroup>
-                {showUp ? <Button
+                <Button
                     variant="contained"
                     color="secondary"
                     size="small"
@@ -114,7 +114,7 @@ const QuestionPreviewWrapper = (props) => {
                         onRemove(question._id);
                     }}>
                     <Icon>remove</Icon>
-                </Button> : ''}
+                </Button>
           </div>
         </div>
     );   

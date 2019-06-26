@@ -18,7 +18,7 @@ const questionList = (props) => {
                             isActive={current_question_id === question._id}
                             onActive={() => props.onActive(question._id)}
                             onRemove={() => props.onRemove(question)}
-                            onClone={() => props.onClone(question)}
+                            onClone={() => props.onClone(question, question._id)}
                             onUp={() => props.onUp(question)}
                             onDown={() => props.onDown(question)}
                             onOpenModal={() => props.onOpenModal()} />

@@ -173,12 +173,13 @@ export const switchTab = (tab) => ({
     tab
   });
 
-export const cloneQuestion = (question) => {
+export const cloneQuestion = (question, questionId) => {
   return {
     type: actionTypes.CLONE_QUESTION,
     payload: {
+      questionId: questionId,
       ...question,
-      _id: newId()
+      _id: newId(),
     }
   }
 };
