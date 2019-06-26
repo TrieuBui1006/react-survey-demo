@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import PropsTypes from 'prop-types';
+
 import OptionField from './OptionField';
 import newId from '../../../ulitity/idGenerator';
+
 
 class MultichoiceEditer extends Component {
     constructor(props) {
@@ -69,5 +72,12 @@ class MultichoiceEditer extends Component {
         );
     }
 }
+
+MultichoiceEditer.PropsTypes = {
+    _id: PropsTypes.string,
+    title: PropsTypes.string,
+    options: PropsTypes.array,
+    updateQuestion: PropsTypes.func
+};
 
 export default MultichoiceEditer;

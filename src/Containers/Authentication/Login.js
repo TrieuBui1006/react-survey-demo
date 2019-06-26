@@ -98,7 +98,7 @@ class Login extends Component {
         }
 
         let form = (<form onSubmit={this.submitHandler}>
-                {formElementArray.map(formElement => (
+                {formElementArray.sort().map(formElement => (
                     <Input
                     key={formElement.id}
                     label={formElement.config.elementLabel}

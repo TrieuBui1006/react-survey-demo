@@ -5,7 +5,28 @@
 }
 
 .ResultsTable .Toolbar {
-    margin: 5px 0;
+    margin: 5px auto;
+    padding-right: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.ResultsTable .ConvertBtn button {
+    padding: 10px 15px;
+    background-color: #2e7d32;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: 500;
+    color: #fff;
+    outline: none;
+    border-radius: 10px;
+}
+
+.ResultsTable .NotDisplay {
+    display: none;
 }
   
 .ResultsTable table {
@@ -60,9 +81,12 @@
     cursor: pointer;
 }
 
-@media(max-width: 500px) {
+@media(max-width: 650px) {
     .ResultsTable table td, .ResultsTable table th {
         max-width: 200px;
+    }
+    .ResultsTable .Toolbar {
+        padding-right: 0;
     }
 }
 
