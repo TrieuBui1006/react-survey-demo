@@ -6,7 +6,10 @@ import classes from './Question.module.css';
 const singleLineText = (props) => {
     return (
         <div className={classes.Question}>
-            <h3 className={classes.Label}>{props.title}</h3>
+            <h3 className={classes.Label}
+                style={{
+                    color: props.isRequired ? '#e91e63' : 'black'
+                }} >{props.isRequired ? props.title + '(*)' : props.title}</h3>
             <div>
                 <Field 
                     type="text" 

@@ -8,6 +8,7 @@ const initialState = {
         subTitle: '', 
         questions: {}, 
         question_order: [],
+        question_required:[],
         creatorDate: '',
         lastModified: '',
         submitting: false,
@@ -15,6 +16,7 @@ const initialState = {
     isFetching: false,
     isSubmitting: false,
     isSuccess: false,
+    isRequired: false,
     error: null
 }
 
@@ -35,11 +37,13 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_USER_SURVEY_FAIL:
             return updateObject(state, {error: action.error, isFetching: false});
         case actionTypes.SUBMIT_SURVEY_START:
-            return updateObject(state, {isSubmitting: true});
+            return updateObject(state, {isSubmitting: true, isRequired: false});
         case actionTypes.SUBMIT_SURVEY_SUCCESS:
             return updateObject(state, {isSubmitting: false, isSuccess: true, error: null});
         case actionTypes.SUBMIT_SURVEY_FAIL:
             return updateObject(state, {error: action.error, isSubmitting: false});
+        case actionTypes.SUBMIT_SURVEY_REQUIRED:
+            return updateObject(state, {isRequired: true});
         default:
             return state;
     }

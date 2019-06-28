@@ -36,6 +36,8 @@ class UserSurveyPage extends Component {
 const mapStatetoProps = state => {
     return {
         survey: assembleSurvey(state.survey.survey),
+        question_required: state.survey.survey.question_required,
+        isRequired: state.survey.isRequired,
         isLoading: state.survey.isFetching || state.survey.isSubmitting,
         isSuccess: state.survey.isSuccess,
         isError: state.survey.error !== null,

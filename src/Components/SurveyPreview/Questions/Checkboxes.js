@@ -3,10 +3,13 @@ import React from "react";
 import classes from './QuestionPreview.module.css';
 
 const checkboxes = (props) => {
-  const { title, options, _id } = props;
+  const { title, options, _id, isRequired } = props;
   return (
       <div>
-        <h3 className={classes.Label}>{title}</h3>
+        <h3 className={classes.Label}
+          style={{
+            color: isRequired ? '#e91e63' : 'black'
+          }}>{isRequired ? title + '(*)' : title}</h3>
         <div>
         {options.map((option, index) => {
           return (

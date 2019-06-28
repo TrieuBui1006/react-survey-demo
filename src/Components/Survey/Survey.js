@@ -9,7 +9,7 @@ import classes from './Survey.module.css';
 
 class Survey extends Component {
     render () {
-        const { survey, isLoading, handleSubmit, isSuccess, isError, AuthSubmit } = this.props;
+        const { survey, isLoading, handleSubmit, isSuccess, isError, AuthSubmit, isRequired} = this.props;
         const { title, subTitle, questions } = survey;
 
         let surveyForm = <Spinner />
@@ -18,6 +18,7 @@ class Survey extends Component {
                 <form onSubmit={handleSubmit}>
                     {!AuthSubmit ? <div className={classes.Block}>This survey is no longer available for submission!</div> : null }
                     <header>
+                        <p className={classes.Rules}>(*) Answer Requirements</p>
                         <h2 className={classes.Title}>{title}</h2>
                         <p>{subTitle}</p>
                     </header>
@@ -27,6 +28,7 @@ class Survey extends Component {
                         })}
                     </ul>
                     <div>
+                        {isRequired ? <h4>You need to answer all required questions! (*)</h4> : null}
                         <Button
                             disabled={!AuthSubmit}
                             variant="contained" 
@@ -59,5 +61,5 @@ class Survey extends Component {
 export default withFormik({
     mapPropsToValues: () => {}, 
     handleSubmit: (values, {props}) => {
-        props.onSubmit(values, props.surveyId)
+        props.onSubmit(values, props.surveyId, props.question_required)
     }})(Survey);

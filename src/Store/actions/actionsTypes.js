@@ -55,6 +55,7 @@ export const FETCH_USER_SURVEY_FAIL = 'FETCH_USER_SURVEY_FAIL';
 export const SUBMIT_SURVEY_START = 'SUBMIT_SURVEY_START';
 export const SUBMIT_SURVEY_SUCCESS = 'SUBMIT_SURVEY_SUCCESS';
 export const SUBMIT_SURVEY_FAIL = 'SUBMIT_SURVEY_FAIL';
+export const SUBMIT_SURVEY_REQUIRED = 'SUBMIT_SURVEY_REQUIRED';
 ////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////--Data--////////////////////////////////////////////////////////

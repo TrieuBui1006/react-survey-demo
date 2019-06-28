@@ -18,12 +18,20 @@
 .Title {
     color: #1a237e;
     font-size: 1.85em;
+    margin: 0.6em auto;
+}
+
+.Rules {
+    margin: 0;
+    text-align: right;
+    font-size: 0.9em;
+    color: #e91e63;
 }
 
 .Block {
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1.2em;
     letter-spacing: 0.1em;
     color: #e91e63;
     background-color: #ec40798f;
