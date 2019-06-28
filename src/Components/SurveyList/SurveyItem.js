@@ -48,7 +48,11 @@ class SurveyItem extends Component {
         const lastModified = (new Date(this.props.lastModified)).toDateString();
 
     return (
-        <div className={classes.SurveyItem}>
+        <div className={classes.SurveyItem}
+            style={{
+                backgroundColor: this.state.submitState ? 'rgba(51, 115, 235, 0.253)': 'rgba(204, 204, 204, 0.15)',
+                border: this.state.submitState ? '1px solid #3f51b5' : '1px solid #ccc'
+            }}>
             <div>
                 <h3>{this.props.title}</h3>
                 <div>

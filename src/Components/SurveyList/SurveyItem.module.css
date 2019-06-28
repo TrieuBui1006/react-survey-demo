@@ -1,13 +1,12 @@
 .SurveyItem {
     margin: 10px auto;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 10px;;
     display: flex;
     justify-content: space-between;
     align-content: center;
     box-sizing: border-box;
-    background-color: rgba(204, 204, 204, 0.1);
+    transition: 300ms;
 }
 
 .SurveyItem h3,

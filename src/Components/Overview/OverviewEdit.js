@@ -38,7 +38,7 @@ const overviewEdit = (props) => {
                 />
                 }
                 label="Is or Not Collecting (turn it on to allow submit!)"/>
-            <p><strong>Link of the survey:</strong></p> 
+            <p><strong>Link for respondents :</strong></p> 
             <a 
               rel="noopener noreferrer"
               href={"http://localhost:3000/"+ props.surveyId + "/" + props.userId} 
@@ -47,4 +47,4 @@ const overviewEdit = (props) => {
     )
 }
 
-export default overviewEdit
+export default overviewEdit;
