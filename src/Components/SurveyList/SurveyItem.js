@@ -3,28 +3,11 @@ import {connect} from 'react-redux';
 
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import {withStyles} from '@material-ui/core/styles';
-import lightGreen from '@material-ui/core/colors/lightGreen';
+import GreenSwitcher from '../UI/Switcher/GreenSwitch';
 
 import {toggleSubmit} from '../../Store/actions/surveyEditer';
 
 import classes from './SurveyItem.module.css';
-
-const GreenSwitch = withStyles({
-    switchBase: {
-      color: lightGreen['A400'],
-      '&$checked': {
-        color: lightGreen['A700'],
-      },
-      '&$checked + $track': {
-        backgroundColor: lightGreen['A700'],
-      },
-    },
-    checked: {},
-    track: {},
-})(Switch);
 
 class SurveyItem extends Component {
     state={
@@ -63,15 +46,10 @@ class SurveyItem extends Component {
 
             <div className={classes.ButtonContainer}>
                 <div className={classes.Switcher}>
-                    <FormControlLabel
-                        control={
-                        <GreenSwitch
-                            checked={this.state.submitState}
-                            onChange={() => this.switchHandler()}
-                        />
-                        }
-                        label="Collecting"
-                    />
+                    <GreenSwitcher 
+                        checked={this.state.submitState}
+                        onChange={() => this.switchHandler()}
+                        label="collecting" />
                 </div>
 
                 <div className={classes.GroupeButton}>

@@ -30,6 +30,7 @@ export const InitQuestions = {
     "_id": newId(),
     "type": QuestionTypes.MULTI_CHOICE,
     "title": "Select a choice",
+    "isRequired": false,
     "options": [
       {
         "_id": newId(),
@@ -49,6 +50,7 @@ export const InitQuestions = {
     "_id": newId(),
     "type": QuestionTypes.CHECKBOXES,
     "title": "Check All That Apply",
+    "isRequired": false,
     "options": [
       {
         "_id": newId(),
@@ -68,18 +70,21 @@ export const InitQuestions = {
     "_id": newId(),
     type: QuestionTypes.SINGLE_LINE_TEXT,
     title: 'Untitled',
-    placeholder: ''
+    placeholder: '',
+    "isRequired": false,
   }),
   [QuestionTypes.MULTI_LINE_TEXT]: () => ({
     "_id": newId(),
     type: QuestionTypes.MULTI_LINE_TEXT,
     title: 'Untitled',
-    placeholder: ''
+    placeholder: '',
+    "isRequired": false,
   }),
   [QuestionTypes.DROPDOWN]: () => ({
     "_id": newId(),
     "type": QuestionTypes.DROPDOWN,
     "title": "Select a choice",
+    "isRequired": false,
     "options": [
       {
         "_id": newId(),
