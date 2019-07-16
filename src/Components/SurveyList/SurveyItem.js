@@ -49,7 +49,7 @@ class SurveyItem extends Component {
                     <GreenSwitcher 
                         checked={this.state.submitState}
                         onChange={() => this.switchHandler()}
-                        label="collecting" />
+                        label={this.state.submitState ? "collecting" : "Not Collecting"} />
                 </div>
 
                 <div className={classes.GroupeButton}>
