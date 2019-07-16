@@ -23,7 +23,10 @@ class OverviewPage extends Component {
     deleteSurveyHandler = (surveyId) => {
         axios.delete('/surveys/' + surveyId + '.json?auth=' + this.props.token)
             .then(res => {
-                this.props.onRedirect();
+                axios.delete('results/' + surveyId + '.json?auth=' + this.props.token)
+                    .then(r => {
+                        this.props.onRedirect();
+                    })
             });
     }
 

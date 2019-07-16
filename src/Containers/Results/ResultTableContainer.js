@@ -17,7 +17,8 @@ const mapStateToProps = state => {
     return {
         grid: resultsToGrid(state.data),
         rowSelects: getRowSelects(state.data),
-        allSelect: getAllSelected(state.data)
+        allSelect: getAllSelected(state.data),
+        surveyId: state.surveyEditer.survey.id
     };
 };
 

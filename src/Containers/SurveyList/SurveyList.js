@@ -15,8 +15,10 @@ class SurveyList extends Component {
     deleteSurveyHandler = (surveyId) => {
         axios.delete('/surveys/' + surveyId + '.json?auth=' + this.props.token)
             .then(res => {
-                    // console.log(res.data);
-                    this.props.onFetchSurveys(this.props.token, this.props.userId)
+                    axios.delete('/results/' + surveyId + '.json?auth=' + this.props.token)
+                        .then(r => {
+                            this.props.onFetchSurveys(this.props.token, this.props.userId)
+                        })
                 });
     }
 

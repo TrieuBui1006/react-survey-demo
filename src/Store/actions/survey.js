@@ -106,7 +106,7 @@ export const submitSurvey = (data, surveyId, question_required) => {
                     submitDate: new Date().toString()
                 }
             }
-            axios.put('/results/'+ id +'.json', result)
+            axios.put('/results/'+ surveyId + '/' + id +'.json', result)
                 .then(res => {
                     dispatch(submitSurveySuccess())
                 })

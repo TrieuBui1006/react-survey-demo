@@ -17,7 +17,7 @@ class ResultsTable extends Component {
     }
 
     render() {
-        let { onSelectRow, rowSelects, allSelected, onDeleteRow } = this.props;
+        let { onSelectRow, rowSelects, allSelected, onDeleteRow, surveyId } = this.props;
         let { columns, results } = this.props.grid;
         let anySelected = Object.keys(rowSelects).some(k => rowSelects[k]);
         let isDisable = true;
@@ -34,7 +34,7 @@ class ResultsTable extends Component {
                     variant="contained"
                     color="secondary"
                     size="medium"
-                    onClick={() => onDeleteRow(results.filter(r => rowSelects[r.id]))}><Icon>delete</Icon> Delete</Button>
+                    onClick={() => onDeleteRow(results.filter(r => rowSelects[r.id]), surveyId)}><Icon>delete</Icon> Delete</Button>
                   <div className={classes.ConvertBtn}>
                     <ReactHTMLTableToExcel
                       id="test-table-xls-button"

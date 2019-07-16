@@ -3,6 +3,8 @@ import PropsTypes from 'prop-types';
 
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import classes from './Flex.module.css';
 
 class OptionField extends Component {
     render() {
@@ -13,16 +15,20 @@ class OptionField extends Component {
                     type="text"
                     value={content}
                     onChange={onChange}/>
-                <div>
-                    <Button 
+                <div className={classes.Flex}>
+                    <ButtonGroup
                         variant="contained"
-                        size="medium"
-                        onClick={onClone}><Icon>add</Icon></Button>
-                    {canRemove ? <Button 
-                        variant="contained"
-                        color="secondary"
-                        size="medium" 
-                        onClick={onRemove}><Icon>remove</Icon></Button> : ''}
+                        size="small"
+                        color="primary" >
+                        <Button 
+                            variant="contained"
+                            size="small"
+                            onClick={onClone}><Icon>add</Icon></Button>
+                        {canRemove ? <Button 
+                            variant="contained"
+                            size="small" 
+                            onClick={onRemove}><Icon>remove</Icon></Button> : ''}
+                    </ButtonGroup>
                 </div>
             </div>
         );

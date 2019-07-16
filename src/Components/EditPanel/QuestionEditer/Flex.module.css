@@ -1,0 +1,8 @@
+.Flex {
+    width: 95%;
+    margin: 0 3px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+}

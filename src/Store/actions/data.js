@@ -4,9 +4,9 @@ import {QuestionTypes} from '../../ulitity/constants/Questions';
 import keyBy from 'lodash/keyBy';
 
 export const fetchResults = (surveyId, token) => {
-    const queryParams = '?auth=' + token + '&orderBy="surveyId"&equalTo="' + surveyId + '"';
+    const queryParams = '?auth=' + token;
     let fetchResults = [];
-    return axios.get('results.json' + queryParams)
+    return axios.get('results/' + surveyId + '.json' + queryParams)
         .then(res => {
             for (let key in res.data) {
                 fetchResults.push({
@@ -161,12 +161,12 @@ export const getRowSelects = (state) => state.rowSelects;
 export const getAllSelected = (state) => Object.keys(state.rowSelects).length && !(Object.keys(state.rowSelects).some(id => !state.rowSelects[id]));
 
 
-export const deleteResults = (results) => {
-    return Promise.all(results.map(result => axios.delete('/results/'+ result.id + '.json')));
+export const deleteResults = (results, surveyId) => {
+    return Promise.all(results.map(result => axios.delete('/results/'+ surveyId + '/' + result.id + '.json')));
 };
 
-export const deleteRows = (deleteds) => dispatch => {
-    return deleteResults(deleteds).then(() => {
+export const deleteRows = (deleteds, surveyId) => dispatch => {
+    return deleteResults(deleteds, surveyId).then(() => {
         let deletedMap = keyBy(deleteds, e => e.id);
         dispatch({
         type: actionTypes.DELETE_ROW,
